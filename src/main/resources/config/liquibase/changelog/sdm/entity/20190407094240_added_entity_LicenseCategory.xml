@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+      Added the entity sequence.
+    -->
+
+    <changeSet id="20190407094240-seq-1" author="Rami Nassar">
+        <createSequence sequenceName="lica_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity License Category.
+    -->
+    <changeSet id="20190407094240-1" author="Rami Nassar">
+        <createTable tableName="sdm_license_category" remarks="The License Category entity. @author Rami Nassar">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_lica_category_code" />
+            </column>
+
+            <column name="synched_entity_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_lica_synched_entity_id" />
+            </column>
+
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="global_license_category_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="country_code" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="city_code" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_license_category_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="uts_mapping_code" type="integer">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+
+    </changeSet>
+
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190407094240-audit-1" author="Rami Nassar">
+        <addColumn tableName="sdm_license_category">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
+    <!-- Added exchangeable columns -->
+    <changeSet id="20190407094240-2" author="Sherif Thabet">
+        <addColumn tableName="sdm_license_category">
+            <column name="exchangeable" type="boolean">
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <!-- Include SQL of License Category -->
+    <include file="../sql/20190407094240_sql_LicenseCategory.xml" relativeToChangelogFile="true" />
+</databaseChangeLog>

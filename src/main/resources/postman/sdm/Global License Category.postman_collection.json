@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "f2167d6e-bb9f-46a9-ba1d-66a013e8e9a0",
+		"name": "License Category Code",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All License Category Codes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"lic",
+						"license-category-codes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All License Category All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"lic",
+								"license-category-codes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Apr 2019 09:01:29 GMT"
+						},
+						{
+							"key": "X-Total-Count",
+							"value": "180"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Link",
+							"value": "</api/license-category-codes?page=1&size=20>; rel=\"next\",</api/license-category-codes?page=8&size=20>; rel=\"last\",</api/license-category-codes?page=0&size=20>; rel=\"first\""
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 180,\n        \"code\": 1,\n        \"name\": {\n            \"ar\": \"1\",\n            \"en\": \"1\"\n        }\n    },\n    {\n        \"id\": 181,\n        \"code\": 2,\n        \"name\": {\n            \"ar\": \"10\",\n            \"en\": \"10\"\n        }\n    },\n    {\n        \"id\": 182,\n        \"code\": 3,\n        \"name\": {\n            \"ar\": \"11\",\n            \"en\": \"11\"\n        }\n    },\n    {\n        \"id\": 183,\n        \"code\": 4,\n        \"name\": {\n            \"ar\": \"12\",\n            \"en\": \"12\"\n        }\n    },\n    {\n        \"id\": 184,\n        \"code\": 5,\n        \"name\": {\n            \"ar\": \"13\",\n            \"en\": \"13\"\n        }\n    },\n    {\n        \"id\": 185,\n        \"code\": 6,\n        \"name\": {\n            \"ar\": \"14\",\n            \"en\": \"14\"\n        }\n    },\n    {\n        \"id\": 186,\n        \"code\": 7,\n        \"name\": {\n            \"ar\": \"15\",\n            \"en\": \"15\"\n        }\n    },\n    {\n        \"id\": 187,\n        \"code\": 8,\n        \"name\": {\n            \"ar\": \"16\",\n            \"en\": \"16\"\n        }\n    },\n    {\n        \"id\": 188,\n        \"code\": 9,\n        \"name\": {\n            \"ar\": \"17\",\n            \"en\": \"17\"\n        }\n    },\n    {\n        \"id\": 189,\n        \"code\": 10,\n        \"name\": {\n            \"ar\": \"18\",\n            \"en\": \"18\"\n        }\n    },\n    {\n        \"id\": 190,\n        \"code\": 11,\n        \"name\": {\n            \"ar\": \"19\",\n            \"en\": \"19\"\n        }\n    },\n    {\n        \"id\": 191,\n        \"code\": 12,\n        \"name\": {\n            \"ar\": \"2\",\n            \"en\": \"2\"\n        }\n    },\n    {\n        \"id\": 192,\n        \"code\": 13,\n        \"name\": {\n            \"ar\": \"20\",\n            \"en\": \"20\"\n        }\n    },\n    {\n        \"id\": 193,\n        \"code\": 14,\n        \"name\": {\n            \"ar\": \"21\",\n            \"en\": \"21\"\n        }\n    },\n    {\n        \"id\": 194,\n        \"code\": 15,\n        \"name\": {\n            \"ar\": \"2A\",\n            \"en\": \"2A\"\n        }\n    },\n    {\n        \"id\": 195,\n        \"code\": 16,\n        \"name\": {\n            \"ar\": \"2B\",\n            \"en\": \"2B\"\n        }\n    },\n    {\n        \"id\": 196,\n        \"code\": 17,\n        \"name\": {\n            \"ar\": \"3\",\n            \"en\": \"3\"\n        }\n    },\n    {\n        \"id\": 197,\n        \"code\": 18,\n        \"name\": {\n            \"ar\": \"3A\",\n            \"en\": \"3A\"\n        }\n    },\n    {\n        \"id\": 198,\n        \"code\": 19,\n        \"name\": {\n            \"ar\": \"4\",\n            \"en\": \"4\"\n        }\n    },\n    {\n        \"id\": 199,\n        \"code\": 20,\n        \"name\": {\n            \"ar\": \"4A\",\n            \"en\": \"4A\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get License Category Code By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes/190",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"lic",
+						"license-category-codes",
+						"190"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get License Category Code By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes/180",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"lic",
+								"license-category-codes",
+								"180"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Apr 2019 09:02:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 180,\n    \"code\": 1,\n    \"name\": {\n        \"ar\": \"1\",\n        \"en\": \"1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create License Category Codes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": 1234,\n    \"name\": {\n        \"ar\": \"تجربة\",\n        \"en\": \"Test\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"lic",
+						"license-category-codes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create License Category Codes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": 1234,\n    \"name\": {\n        \"ar\": \"تجربة\",\n        \"en\": \"Test\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"lic",
+								"license-category-codes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-dlsBackendApp-params",
+							"value": "363"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Location",
+							"value": "/api/license-category-codes/363"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Apr 2019 09:01:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-dlsBackendApp-alert",
+							"value": "dlsBackendApp.dlsBackendGlobalLicenseCategory.created"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 363,\n    \"code\": 1234,\n    \"name\": {\n        \"ar\": \"تجربة\",\n        \"en\": \"Test\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update License Category Code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 190,\n    \"code\": 11,\n    \"name\": {\n        \"ar\": \"19\",\n        \"en\": \"19\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"lic",
+						"license-category-codes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update License Category Code",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 363,\n    \"code\": 1234,\n    \"name\": {\n        \"ar\": \"تجربة 1\",\n        \"en\": \"Test 1\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"lic",
+								"license-category-codes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-dlsBackendApp-params",
+							"value": "363"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Apr 2019 09:02:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-dlsBackendApp-alert",
+							"value": "dlsBackendApp.dlsBackendGlobalLicenseCategory.updated"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 363,\n    \"code\": 1234,\n    \"name\": {\n        \"ar\": \"تجربة 1\",\n        \"en\": \"Test 1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete License Category Code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/lic/license-category-codes/363",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"lic",
+						"license-category-codes",
+						"363"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

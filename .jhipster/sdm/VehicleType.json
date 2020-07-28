@@ -1,0 +1,61 @@
+{
+    "name": "VehicleType",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gearType",
+            "fieldType": "GearType",
+            "fieldValues": "AUTOMATIC,MANUAL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "VehicleTypeStatus",
+            "fieldValues": "ACTIVE,INACTIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A two sides relationship",
+            "relationshipName": "licenseCategory",
+            "otherEntityName": "licenseCategory",
+            "otherEntityRelationshipName": "vehicleType"
+        }
+    ],
+    "changelogDate": "20190407094238",
+    "javadoc": "The Vehicle Type entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "lic_vehicle_type",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

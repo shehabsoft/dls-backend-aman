@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+      Added the entity sequence.
+    -->
+
+    <changeSet id="20190617092401-seq-1" author="Mena Emiel">
+        <createSequence sequenceName="lefi_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity LearningFile.
+    -->
+    <changeSet id="20190617092401-1" author="Mena Emiel">
+        <createTable tableName="prd_learning_file" remarks="LearningFile (prd_learning_file) entity. @author Mena Emiel.">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="persona_category_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="persona_version_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="service_request_id" type="bigint">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_lefi_service_request_id"/>
+            </column>
+
+            <column name="application_id" type="bigint">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_lefi_application_id"/>
+            </column>
+
+            <column name="product_document" type="clob">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="synched_entity_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_lefi_synched_entity_id"/>
+            </column>
+
+            <column name="technical_remarks" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190617092401-audit-1" author="Mena Emiel">
+        <addColumn tableName="prd_learning_file">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

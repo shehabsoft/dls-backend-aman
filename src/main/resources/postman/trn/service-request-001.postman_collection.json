@@ -1,0 +1,141 @@
+{
+	"id": "ad0c237b-c184-42b7-98ec-5b024de591d5",
+	"name": "service-request-001",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"f1cd09a3-4ecd-481e-a8fe-890c0d46c6a7"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "f1cd09a3-4ecd-481e-a8fe-890c0d46c6a7",
+			"name": "service-requests-001",
+			"url": "http://localhost:8080/dlsbackend/api/trn/service-requests",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjExMDM1NTUsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.8mvhyFboWZzJEWFRzVaIutrFVk5tR-vN0PRoeXX68ziP3w4YgoYqTUGN5xifi_98JvZdj9EaTSCArYWFjeluEw",
+						"type": "string"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"responses": [
+				{
+					"id": "cc3ec315-fd9c-486f-b791-3cf84fae534e",
+					"name": "service-requests-001",
+					"status": null,
+					"mime": null,
+					"language": "json",
+					"text": "{\n    \"serviceReferenceNo\": 2,\n    \"applicationReferenceNo\": 1,\n    \"serviceCode\": \"001\",\n    \"phaseType\": \"CUSTOMER_ELIGIBILITY\",\n    \"status\": \"UNDER_PROCESSING\",\n    \"statusDate\": \"2019-06-24T10:26:21.976Z\",\n    \"statusDescription\": {\n        \"ar\": \"قيد الإنجاز\",\n        \"en\": \"Under Processing\"\n    },\n    \"serviceDocument\": {\n        \"parameters\": {\n            \"trafficCodeNo\": \"1\",\n            \"licenseCategoryCode\": \"12344\"\n        }\n    }\n}",
+					"responseCode": {
+						"code": 201,
+						"name": "Created"
+					},
+					"requestObject": {
+						"data": "{\n    \"applicationReferenceNo\": 1,\n    \"serviceCode\": \"001\",\n    \"serviceDocument\": {\n        \"parameters\": {\n            \"trafficCodeNo\": \"1\",\n\t\t\t\"licenseCategoryCode\": \"12344\"\n        }\n    }\n}",
+						"dataMode": "raw",
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"type": "text"
+							}
+						],
+						"method": "POST",
+						"pathVariableData": [],
+						"queryParams": [],
+						"url": "http://localhost:8080/dlsbackend/api/trn/service-requests"
+					},
+					"headers": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-dlsBackendApp-params",
+							"value": "2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Location",
+							"value": "/api/trn/service-requests/2"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Jun 2019 10:26:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "1561371981987"
+						},
+						{
+							"key": "X-dlsBackendApp-alert",
+							"value": "dlsBackendApp.dlsBackendServiceRequest.created"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookies": null,
+					"request": "f1cd09a3-4ecd-481e-a8fe-890c0d46c6a7",
+					"collection": "ad0c237b-c184-42b7-98ec-5b024de591d5"
+				}
+			],
+			"rawModeData": "{\n    \"applicationReferenceNo\": 1,\n    \"serviceCode\": \"001\",\n    \"serviceDocument\": {\n        \"parameters\": {\n            \"trafficCodeNo\": \"1\",\n\t\t\t\"licenseCategoryCode\": \"12344\"\n        }\n    }\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

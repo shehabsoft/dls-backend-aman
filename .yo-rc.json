@@ -1,0 +1,45 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ae.rta.dls.backend",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.2",
+    "applicationType": "microservice",
+    "baseName": "DlsBackend",
+    "packageName": "ae.rta.dls.backend",
+    "packageFolder": "ae/rta/dls/backend",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MmVmMDU0OGNjZjcwNGFkZTU4NzQyMzIzYTk5OGRmZjcwMTg3MDcyZjIzNTNjYjMwN2RlMWM4NGQzOTZhNGEyNTk0OWE4NGNiYWEyYzdkNTM4OGIxMmVjMDFiNzRiZTNjNzc5ZjBkODE0OTFjYzc0Yjg0MzdjZWUyOGQ5ZDY2YTA=",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "ar-ly"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  },
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "custom"
+  }
+}

@@ -1,0 +1,47 @@
+{
+    "name": "DomainValue",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "englishDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "arabicDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "domain",
+            "otherEntityName": "domain",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "domainValue"
+        }
+    ],
+    "changelogDate": "20190219132938",
+    "javadoc": "The DomainValue entity.\n@author Mena Emiel.",
+    "entityTableName": "domain_value",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

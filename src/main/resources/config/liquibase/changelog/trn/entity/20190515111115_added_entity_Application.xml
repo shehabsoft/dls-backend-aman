@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity sequence.
+    -->
+    <changeSet id="20190515111115-seq-1" author="Mena Emiel">
+        <createSequence sequenceName="appl_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity Application.
+    -->
+    <changeSet id="20190515111115-1" author="Mena Emiel">
+        <createTable tableName="trn_application" remarks="Application (trn_application) entity. @author Mena Emiel.">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status_description" type="varchar(4000)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="active_phase" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="confirmed_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="confirmation_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejected_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejection_reason" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejection_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="process_instance_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_appl_process_instance_id" />
+            </column>
+
+            <column name="channel_code" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="english_customer_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="arabic_customer_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="trade_license_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="english_corporate_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="arabic_corporate_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="user_type" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_type_description" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_role" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="application_criteria" type="clob">
+                <constraints nullable="true" />
+            </column>
+            <column name="application_type_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="persona" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="persona_version" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+        <dropDefaultValue tableName="trn_application" columnName="status_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="trn_application" columnName="confirmation_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="trn_application" columnName="rejection_date" columnDataType="datetime"/>
+
+    </changeSet>
+
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190515111115-audit-1" author="Mena Emiel">
+        <addColumn tableName="trn_application">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="20190515111115-2" author="Mohammad Abulawi">
+        <addColumn tableName="trn_application">
+            <column name="synched_entity_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_appl_synched_entity_id"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "477f7477-fa8a-4702-9b56-41444c9c3e1e",
+		"name": "Configuration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Configuration By Key",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations/key/sys.restlog.enable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations",
+						"key",
+						"sys.restlog.enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Configuration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"configKey\": \"sys.restlog.enable.5\",\n    \"configValue\": \"true\",\n    \"description\": {\n        \"ar\": \"حفظ طلبات النظام\",\n        \"en\": \"System Restlog Enable\"\n    },\n    \"cached\": false,\n    \"encrypted\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Configuration By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Application Configuration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Application Configuration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Configuration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 7,\n    \"configKey\": \"sys.restlog.enable.7\",\n    \"configValue\": \"true\",\n    \"description\": {\n        \"ar\": \"حفظ طلبات النظام\",\n        \"en\": \"System Restlog Enable\"\n    },\n    \"cached\": false,\n    \"encrypted\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/application-configurations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sys",
+						"application-configurations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

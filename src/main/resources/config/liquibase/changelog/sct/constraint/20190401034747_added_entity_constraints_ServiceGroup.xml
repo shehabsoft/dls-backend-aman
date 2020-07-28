@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Application Type.
+    -->
+    <changeSet id="20190401034747-constraint-1" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sct_service_group ADD CONSTRAINT ck_segr_name CHECK (name IS JSON)
+        </sql>
+    </changeSet>
+    <changeSet id="20190401034747-constraint-2" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="sct_service_group" indexName="UX_SEGR_NAME_AR" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.ar' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_service_group" indexName="UX_SEGR_NAME_EN" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.en' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_service_group" indexName="I_SEGR_STATUS" >
+            <column  name="STATUS"></column>
+        </createIndex>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,60 @@
+{
+    "name": "ApplicationType",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "summary",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ApplicationTypeStatus",
+            "fieldValues": "ACTIVE,INACTIVE,UNDER_DEVELOPMENT",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A two sides relationship",
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "otherEntityRelationshipName": "applicationType"
+        }
+    ],
+    "changelogDate": "20190401034746",
+    "javadoc": "The Application Type entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "sys_application_type",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

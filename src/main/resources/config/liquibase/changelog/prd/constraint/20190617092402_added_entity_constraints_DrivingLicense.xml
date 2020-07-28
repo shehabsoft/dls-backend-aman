@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity DrivingLicense
+    -->
+    <changeSet id="20190617092402-constraint-1" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="prd_driving_license" indexName="I_DRLI_CREATED_DATE">
+            <column name="CREATED_DATE" />
+        </createIndex>
+        <createIndex tableName="prd_driving_license" indexName="I_DRLI_LAST_MODIFIED_DATE">
+            <column name="LAST_MODIFIED_DATE" />
+        </createIndex>
+    </changeSet>
+
+	<changeSet id="20190617092402-constraint-2" author="Mohammad Qasim">
+		<sql dbms="oracle">
+            CREATE INDEX
+             I_DRLI_LIC_NO_CNT_CODE
+            ON PRD_DRIVING_LICENSE
+            (JSON_VALUE(PRODUCT_DOCUMENT, '$.licenseDetails.licenseNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+             JSON_VALUE(PRODUCT_DOCUMENT, '$.licenseDetails.issuedFromCountryDetails.code' RETURNING VARCHAR2(200) NULL ON ERROR));
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190617092402-constraint-3" author="Mohammad Qasim">
+        <sql dbms="oracle">
+            DROP INDEX I_DRLI_LIC_NO_CNT_CODE;
+
+            CREATE INDEX
+             I_DRLI_FOREIGN_LIC_NO_CNT_CODE
+            ON PRD_DRIVING_LICENSE
+            (JSON_VALUE(PRODUCT_DOCUMENT, '$.foreignLicenseDetails.licenseNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+             JSON_VALUE(PRODUCT_DOCUMENT, '$.foreignLicenseDetails.issuedFromCountryDetails.code' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_DRLI_CUST_TRF_CODE
+            ON PRD_DRIVING_LICENSE
+            (JSON_VALUE(PRODUCT_DOCUMENT, '$.customerInfo.trafficCodeNo' RETURNING VARCHAR2(200) NULL ON ERROR));
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="20190617092402-constraint-4" author="Mohammad Qasim">
+        <sql dbms="oracle">
+            CREATE INDEX
+            I_DRLI_LIC_NO_ISSUE_DATE
+            ON PRD_DRIVING_LICENSE
+            (JSON_VALUE(PRODUCT_DOCUMENT, '$.licenseDetails.licenseNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(PRODUCT_DOCUMENT, '$.licenseDetails.issueDate' RETURNING VARCHAR2(200) NULL ON ERROR));
+        </sql>
+    </changeSet>
+</databaseChangeLog>

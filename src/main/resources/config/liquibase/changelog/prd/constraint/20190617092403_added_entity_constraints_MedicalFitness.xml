@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MedicalFitness
+    -->
+    <changeSet id="20190617092403-constraint-1" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="prd_medical_fitness" indexName="I_MEFI_CREATED_DATE">
+            <column name="CREATED_DATE" />
+        </createIndex>
+        <createIndex tableName="prd_medical_fitness" indexName="I_MEFI_LAST_MODIFIED_DATE">
+            <column name="LAST_MODIFIED_DATE" />
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

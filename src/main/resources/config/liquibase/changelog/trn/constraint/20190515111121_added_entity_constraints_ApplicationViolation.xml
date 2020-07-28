@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ApplicationViolation.
+    -->
+    <changeSet id="20190515111121-constraint-1" author="Mena Emiel">
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="trn_application_violation"
+                                 constraintName="fk_apvi_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_application"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_request_id"
+                                 baseTableName="trn_application_violation"
+                                 constraintName="fk_apvi_service_request_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_service_request"/>
+
+    </changeSet>
+    <changeSet id="20190515111121-constraint-2" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="trn_application_violation" indexName="I_APVI_APPLICATION_ID" >
+            <column  name="APPLICATION_ID"></column>
+        </createIndex>
+        <createIndex tableName="trn_application_violation" indexName="I_APVI_SERVICE_REQUEST_ID" >
+            <column  name="SERVICE_REQUEST_ID"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

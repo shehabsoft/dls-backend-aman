@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Application Type.
+    -->
+    <changeSet id="20190617092401-constraint-1" author="Mohammad Qasim">
+        <sql dbms="oracle">
+            ALTER TABLE prd_learning_file ADD CONSTRAINT ck_lefi_PRODUCT_DOCUMENT CHECK (PRODUCT_DOCUMENT IS JSON)
+        </sql>
+
+        <sql dbms="oracle">
+            CREATE INDEX
+            I_LEFI_STATUS
+            ON prd_learning_file (JSON_VALUE(PRODUCT_DOCUMENT, '$.learningFileDetails.status' RETURNING VARCHAR2(200) ERROR ON ERROR)
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190617092401-constraint-2" author="Mohammad Qasim">
+        <sql dbms="oracle">
+            CREATE INDEX
+            I_LEFI_EID
+            ON prd_learning_file (JSON_VALUE(PRODUCT_DOCUMENT, '$.customerInfo.emiratesId' RETURNING VARCHAR2(200) ERROR ON ERROR)
+            )
+        </sql>
+    </changeSet>
+    
+</databaseChangeLog>

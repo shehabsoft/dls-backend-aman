@@ -1,0 +1,47 @@
+/**
+ * The License Category Code entity.
+ * @author Tariq Abu Amireh
+ */
+entity GlobalLicenseCategory {
+    code Long unique required,
+    name String required,
+    synchedEntityId String
+}
+
+/**
+ * The License Category entity.
+ * @author Tariq Abu Amireh
+ */
+entity LicenseCategory {
+    code Long unique required,
+    status LicenseCategoryStatus required,
+    countryCode String,
+    cityCode String,
+    synchedEntityId String,
+    utsMappingCode Integer,
+    handbookType String,
+    sortOrder Integer
+}
+
+enum LicenseCategoryStatus {
+    ACTIVE,
+    INACTIVE
+}
+
+// defining OneToMany relationships with comments
+relationship OneToMany {
+	/**
+	* A two sides relationship
+	*/
+    GlobalLicenseCategory{licenseCategory} to LicenseCategory{globalLicenseCategory}
+}
+
+// Set pagination options
+paginate GlobalLicenseCategory with pagination
+paginate LicenseCategory with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options
+service all with serviceImpl

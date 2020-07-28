@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <!-- Add Initial liquibase changelogs here -->
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+
+    <!-- Add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/sys/entity/20190213162415_added_entity_EntityAuditEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190216073139_added_entity_EntityAuditConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190213161837_added_entity_ErrorLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190219041904_added_entity_ApplicationConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190219132937_added_entity_Domain.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190219132938_added_entity_DomainValue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190318084829_added_entity_AutomatedJobConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190318084830_added_entity_AutomatedJobAudit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/entity/20190622123710_added_entity_MimeType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/ws/entity/20190423093125_added_entity_BrmRestLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/ws/entity/20190318032747_added_entity_RestLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/entity/20190401034747_added_entity_ServiceGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/entity/20190401034746_added_entity_ApplicationType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/entity/20190401034748_added_entity_Service.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sdm/entity/20190407094239_added_entity_GlobalLicenseCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sdm/entity/20190407094240_added_entity_LicenseCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/entity/20190515111115_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/entity/20190515111118_added_entity_ApplicationPhase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/entity/20190515111119_added_entity_ServiceRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/entity/20190515111121_added_entity_ApplicationViolation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/entity/20190617092401_added_entity_LearningFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/entity/20190617092402_added_entity_DrivingLicense.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/entity/20190617092403_added_entity_MedicalFitness.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/entity/20190722075747_added_entity_Handbook.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/entity/20190923110057_added_entity_BusinessProfile.xml" relativeToChangelogFile="false"/>
+
+    <!-- Add liquibase constraints changelogs here -->
+    <include file="config/liquibase/changelog/sys/constraint/20190219132938_added_entity_constraints_DomainValue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/constraint/20190219132937_added_entity_constraints_Domain.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/constraint/20190219041904_added_entity_constraints_ApplicationConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/constraint/20190401034748_added_entity_constraints_Service.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/constraint/20190401034746_added_entity_constraints_ApplicationType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sct/constraint/20190401034747_added_entity_constraints_ServiceGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sdm/constraint/20190407094240_added_entity_constraints_LicenseCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sdm/constraint/20190407094239_added_entity_constraints_GlobalLicenseCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/constraint/20190515111115_added_entity_constraints_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/constraint/20190515111118_added_entity_constraints_ApplicationPhase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/constraint/20190515111119_added_entity_constraints_ServiceRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/trn/constraint/20190515111121_added_entity_constraints_ApplicationViolation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/constraint/20190617092401_added_entity_constraints_LearningFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/constraint/20190722075747_added_entity_constraints_Handbook.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/constraint/20190617092402_added_entity_constraints_DrivingLicense.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/constraint/20190617092403_added_entity_constraints_MedicalFitness.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/prd/constraint/20190923110057_added_entity_constraints_BusinessProfile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/constraint/20190213161837_added_entity_constraints_ErrorLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/constraint/20190318084829_added_entity_constraints_AutomatedJobConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/sys/constraint/20190318084830_added_entity_constraints_AutomatedJobAudit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/ws/constraint/20190423093125_added_entity_constraints_BrmRestLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/ws/constraint/20190318032747_added_entity_constraints_RestLog.xml" relativeToChangelogFile="false"/>
+    <!-- PLEASE DON'T REMOVE THIS LINES TO AVOID ANY LAKE OF ENTITY GENERATION-->
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+
+</databaseChangeLog>

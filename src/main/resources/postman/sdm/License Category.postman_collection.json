@@ -1,0 +1,689 @@
+{
+	"variables": [],
+	"info": {
+		"name": "License Category",
+		"_postman_id": "97b1fce2-cd11-d98f-c39d-1764eefdbd8e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getLicenseCategories",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "6217843e-1c2f-4e3f-8b34-bc68a2f48527",
+					"name": "getLicenseCategories",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories/country/ARE",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:48:14 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "link",
+							"key": "link",
+							"value": "</api/sdm/license-categories/country?page=0&size=20>; rel=\"last\",</api/sdm/license-categories/country?page=0&size=20>; rel=\"first\"",
+							"description": "Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988",
+							"isLink": true
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-total-count",
+							"key": "x-total-count",
+							"value": "8",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 35,
+					"body": "[ {\r\n  \"id\" : 2165,\r\n  \"code\" : \"1\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 1,\r\n    \"code\" : \"200\",\r\n    \"name\" : {\r\n      \"ar\" : \"دراجة نارية\",\r\n      \"en\" : \"Motor Cycle\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 893,\r\n  \"code\" : \"2\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 2,\r\n    \"code\" : \"201\",\r\n    \"name\" : {\r\n      \"ar\" : \"مركبة خفيفة\",\r\n      \"en\" : \"Light Vehicle\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 2166,\r\n  \"code\" : \"3\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 3,\r\n    \"code\" : \"202\",\r\n    \"name\" : {\r\n      \"ar\" : \"مركبة خفيفة أوتوماتيك\",\r\n      \"en\" : \"Light Vehicle Automatic\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 1553,\r\n  \"code\" : \"4\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 4,\r\n    \"code\" : \"203\",\r\n    \"name\" : {\r\n      \"ar\" : \"مركبة ثقيلة\",\r\n      \"en\" : \"Heavy Vehicle\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 1554,\r\n  \"code\" : \"5\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 5,\r\n    \"code\" : \"204\",\r\n    \"name\" : {\r\n      \"ar\" : \"باص خفيف\",\r\n      \"en\" : \"Light Bus\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 2490,\r\n  \"code\" : \"6\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 6,\r\n    \"code\" : \"205\",\r\n    \"name\" : {\r\n      \"ar\" : \"باص ثقيل\",\r\n      \"en\" : \"Heavy Bus\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 1857,\r\n  \"code\" : \"7\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 7,\r\n    \"code\" : \"206\",\r\n    \"name\" : {\r\n      \"ar\" : \"جهاز ميكانيكي خفيف\",\r\n      \"en\" : \"Light Mechanical Equipment\"\r\n    }\r\n  }\r\n}, {\r\n  \"utsMappingCode\" : 2,\r\n  \"id\" : 265,\r\n  \"code\" : \"8\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 8,\r\n    \"code\" : \"207\",\r\n    \"name\" : {\r\n      \"ar\" : \"جهاز ميكانيكي ثقيل\",\r\n      \"en\" : \"Heavy Mechanical Equipment\"\r\n    }\r\n  }\r\n} ]"
+				}
+			]
+		},
+		{
+			"name": "GetAllLicenseCategories",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "7ac90090-4bb4-4eb9-b772-d9d72a3e396f",
+					"name": "GetAllLicenseCategories",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:47:52 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "link",
+							"key": "link",
+							"value": "</api/sdm/license-categories?page=1&size=20>; rel=\"next\",</api/sdm/license-categories?page=125&size=20>; rel=\"last\",</api/sdm/license-categories?page=0&size=20>; rel=\"first\"",
+							"description": "Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988",
+							"isLink": true
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-total-count",
+							"key": "x-total-count",
+							"value": "2513",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 47,
+					"body": "[ {\r\n  \"id\" : 1,\r\n  \"code\" : \"2933\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 2,\r\n  \"code\" : \"3011\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 3,\r\n  \"code\" : \"2982\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SWE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 124,\r\n    \"code\" : \"16\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1E\",\r\n      \"en\" : \"C1E\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 4,\r\n  \"code\" : \"3121\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GRC\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 167,\r\n    \"code\" : \"15\",\r\n    \"name\" : {\r\n      \"ar\" : \"DE\",\r\n      \"en\" : \"DE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 5,\r\n  \"code\" : \"3139\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SRB\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 6,\r\n  \"code\" : \"3193\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 9,\r\n    \"code\" : \"25\",\r\n    \"name\" : {\r\n      \"ar\" : \"3\",\r\n      \"en\" : \"3\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 7,\r\n  \"code\" : \"3194\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 192,\r\n    \"code\" : \"26\",\r\n    \"name\" : {\r\n      \"ar\" : \"4\",\r\n      \"en\" : \"4\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 8,\r\n  \"code\" : \"3364\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 9,\r\n  \"code\" : \"3001\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 10,\r\n  \"code\" : \"2909\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ROU\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 11,\r\n  \"code\" : \"2927\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 12,\r\n  \"code\" : \"2960\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LVA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 13,\r\n  \"code\" : \"3006\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 117,\r\n    \"code\" : \"9\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1\",\r\n      \"en\" : \"C1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 14,\r\n  \"code\" : \"3190\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 141,\r\n    \"code\" : \"24\",\r\n    \"name\" : {\r\n      \"ar\" : \"2\",\r\n      \"en\" : \"2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 15,\r\n  \"code\" : \"3366\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 16,\r\n  \"code\" : \"3470\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 17,\r\n  \"code\" : \"3481\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 113,\r\n    \"code\" : \"63\",\r\n    \"name\" : {\r\n      \"ar\" : \"C2\",\r\n      \"en\" : \"C2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 18,\r\n  \"code\" : \"2755\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GBR\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 19,\r\n  \"code\" : \"2791\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUT\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 134,\r\n    \"code\" : \"6\",\r\n    \"name\" : {\r\n      \"ar\" : \"A2\",\r\n      \"en\" : \"A2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 20,\r\n  \"code\" : \"3563\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"USA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 195,\r\n    \"code\" : \"7\",\r\n    \"name\" : {\r\n      \"ar\" : \"B\",\r\n      \"en\" : \"B\"\r\n    }\r\n  }\r\n} ]"
+				}
+			]
+		},
+		{
+			"name": "GetLicenseCategoryById",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "a959e306-040a-4302-a9df-80280f7a0e74",
+					"name": "GetAllLicenseCategories",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:47:52 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "link",
+							"key": "link",
+							"value": "</api/sdm/license-categories?page=1&size=20>; rel=\"next\",</api/sdm/license-categories?page=125&size=20>; rel=\"last\",</api/sdm/license-categories?page=0&size=20>; rel=\"first\"",
+							"description": "Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988",
+							"isLink": true
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-total-count",
+							"key": "x-total-count",
+							"value": "2513",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 47,
+					"body": "[ {\r\n  \"id\" : 1,\r\n  \"code\" : \"2933\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 2,\r\n  \"code\" : \"3011\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 3,\r\n  \"code\" : \"2982\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SWE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 124,\r\n    \"code\" : \"16\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1E\",\r\n      \"en\" : \"C1E\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 4,\r\n  \"code\" : \"3121\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GRC\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 167,\r\n    \"code\" : \"15\",\r\n    \"name\" : {\r\n      \"ar\" : \"DE\",\r\n      \"en\" : \"DE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 5,\r\n  \"code\" : \"3139\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SRB\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 6,\r\n  \"code\" : \"3193\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 9,\r\n    \"code\" : \"25\",\r\n    \"name\" : {\r\n      \"ar\" : \"3\",\r\n      \"en\" : \"3\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 7,\r\n  \"code\" : \"3194\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 192,\r\n    \"code\" : \"26\",\r\n    \"name\" : {\r\n      \"ar\" : \"4\",\r\n      \"en\" : \"4\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 8,\r\n  \"code\" : \"3364\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 9,\r\n  \"code\" : \"3001\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 10,\r\n  \"code\" : \"2909\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ROU\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 11,\r\n  \"code\" : \"2927\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 12,\r\n  \"code\" : \"2960\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LVA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 13,\r\n  \"code\" : \"3006\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 117,\r\n    \"code\" : \"9\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1\",\r\n      \"en\" : \"C1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 14,\r\n  \"code\" : \"3190\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 141,\r\n    \"code\" : \"24\",\r\n    \"name\" : {\r\n      \"ar\" : \"2\",\r\n      \"en\" : \"2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 15,\r\n  \"code\" : \"3366\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 16,\r\n  \"code\" : \"3470\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 17,\r\n  \"code\" : \"3481\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 113,\r\n    \"code\" : \"63\",\r\n    \"name\" : {\r\n      \"ar\" : \"C2\",\r\n      \"en\" : \"C2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 18,\r\n  \"code\" : \"2755\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GBR\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 19,\r\n  \"code\" : \"2791\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUT\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 134,\r\n    \"code\" : \"6\",\r\n    \"name\" : {\r\n      \"ar\" : \"A2\",\r\n      \"en\" : \"A2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 20,\r\n  \"code\" : \"3563\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"USA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 195,\r\n    \"code\" : \"7\",\r\n    \"name\" : {\r\n      \"ar\" : \"B\",\r\n      \"en\" : \"B\"\r\n    }\r\n  }\r\n} ]"
+				},
+				{
+					"id": "5579dcec-a492-420e-ac9d-af9aacddc85e",
+					"name": "GetLicenseCategoryById",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:49:55 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "1561300196255",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 35,
+					"body": "{\r\n  \"id\" : 1,\r\n  \"code\" : \"2933\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "GetLicenseCategoryByUtsMappingCode",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "fc00983b-dae9-4ff5-ad20-44bdf6cbe194",
+					"name": "GetAllLicenseCategories",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:47:52 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "link",
+							"key": "link",
+							"value": "</api/sdm/license-categories?page=1&size=20>; rel=\"next\",</api/sdm/license-categories?page=125&size=20>; rel=\"last\",</api/sdm/license-categories?page=0&size=20>; rel=\"first\"",
+							"description": "Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988",
+							"isLink": true
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-total-count",
+							"key": "x-total-count",
+							"value": "2513",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 47,
+					"body": "[ {\r\n  \"id\" : 1,\r\n  \"code\" : \"2933\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 2,\r\n  \"code\" : \"3011\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 3,\r\n  \"code\" : \"2982\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SWE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 124,\r\n    \"code\" : \"16\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1E\",\r\n      \"en\" : \"C1E\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 4,\r\n  \"code\" : \"3121\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GRC\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 167,\r\n    \"code\" : \"15\",\r\n    \"name\" : {\r\n      \"ar\" : \"DE\",\r\n      \"en\" : \"DE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 5,\r\n  \"code\" : \"3139\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"SRB\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 6,\r\n  \"code\" : \"3193\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 9,\r\n    \"code\" : \"25\",\r\n    \"name\" : {\r\n      \"ar\" : \"3\",\r\n      \"en\" : \"3\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 7,\r\n  \"code\" : \"3194\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 192,\r\n    \"code\" : \"26\",\r\n    \"name\" : {\r\n      \"ar\" : \"4\",\r\n      \"en\" : \"4\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 8,\r\n  \"code\" : \"3364\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 9,\r\n  \"code\" : \"3001\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 10,\r\n  \"code\" : \"2909\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ROU\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 127,\r\n    \"code\" : \"17\",\r\n    \"name\" : {\r\n      \"ar\" : \"CE\",\r\n      \"en\" : \"CE\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 11,\r\n  \"code\" : \"2927\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 12,\r\n  \"code\" : \"2960\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LVA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 13,\r\n  \"code\" : \"3006\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"HUN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 117,\r\n    \"code\" : \"9\",\r\n    \"name\" : {\r\n      \"ar\" : \"C1\",\r\n      \"en\" : \"C1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 14,\r\n  \"code\" : \"3190\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CAN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 141,\r\n    \"code\" : \"24\",\r\n    \"name\" : {\r\n      \"ar\" : \"2\",\r\n      \"en\" : \"2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 15,\r\n  \"code\" : \"3366\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUS\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 104,\r\n    \"code\" : \"59\",\r\n    \"name\" : {\r\n      \"ar\" : \"MC\",\r\n      \"en\" : \"MC\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 16,\r\n  \"code\" : \"3470\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 158,\r\n    \"code\" : \"3\",\r\n    \"name\" : {\r\n      \"ar\" : \"A1\",\r\n      \"en\" : \"A1\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 17,\r\n  \"code\" : \"3481\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"CHN\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 113,\r\n    \"code\" : \"63\",\r\n    \"name\" : {\r\n      \"ar\" : \"C2\",\r\n      \"en\" : \"C2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 18,\r\n  \"code\" : \"2755\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"GBR\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 85,\r\n    \"code\" : \"5\",\r\n    \"name\" : {\r\n      \"ar\" : \"A\",\r\n      \"en\" : \"A\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 19,\r\n  \"code\" : \"2791\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"AUT\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 134,\r\n    \"code\" : \"6\",\r\n    \"name\" : {\r\n      \"ar\" : \"A2\",\r\n      \"en\" : \"A2\"\r\n    }\r\n  }\r\n}, {\r\n  \"id\" : 20,\r\n  \"code\" : \"3563\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"USA\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 195,\r\n    \"code\" : \"7\",\r\n    \"name\" : {\r\n      \"ar\" : \"B\",\r\n      \"en\" : \"B\"\r\n    }\r\n  }\r\n} ]"
+				},
+				{
+					"id": "3159e9e0-6366-4882-9c9e-82fa1fbe23d1",
+					"name": "GetLicenseCategoryById",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:49:55 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "1561300196255",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 35,
+					"body": "{\r\n  \"id\" : 1,\r\n  \"code\" : \"2933\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"LUX\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 188,\r\n    \"code\" : \"13\",\r\n    \"name\" : {\r\n      \"ar\" : \"C\",\r\n      \"en\" : \"C\"\r\n    }\r\n  }\r\n}"
+				},
+				{
+					"id": "be226878-83e4-45a7-8c76-5dce0969665a",
+					"name": "GetLicenseCategoryByUtsMappingCode",
+					"originalRequest": {
+						"url": "http://localhost:8081/api/sdm/license-categories/utsMappingCode/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEzNDkxNDQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.14nC38g-9rvbhKPAjClIpMb7Gk4rcuI4B1Qh2wYgCzHo0s_wgWuz1zv1OAufJjLP3Qyh5UZTLrH9TctGIdSdTA",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 23 Jun 2019 14:50:58 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "1561300196277",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 28,
+					"body": "{\r\n  \"utsMappingCode\" : 2,\r\n  \"id\" : 265,\r\n  \"code\" : \"8\",\r\n  \"status\" : \"ACTIVE\",\r\n  \"countryCode\" : \"ARE\",\r\n  \"licenseCategory\" : {\r\n    \"id\" : 8,\r\n    \"code\" : \"207\",\r\n    \"name\" : {\r\n      \"ar\" : \"جهاز ميكانيكي ثقيل\",\r\n      \"en\" : \"Heavy Mechanical Equipment\"\r\n    }\r\n  }\r\n}"
+				}
+			]
+		}
+	]
+}

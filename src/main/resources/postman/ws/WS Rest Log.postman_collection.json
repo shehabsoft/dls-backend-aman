@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "98c255fe-bc27-46b9-b823-9e29cbfcaae9",
+		"name": "WS Rest Log",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get  Rest Logs by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ws/rest-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ws",
+						"rest-logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Rest Logs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ws/rest-logs/416",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ws",
+						"rest-logs",
+						"416"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new  Rest Logs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"correlationId\": \"394eb08939b7efff\",\n        \"httpMethod\": \"GET\",\n        \"httpStatus\": 503,\n        \"requestUrl\": \"http://localhost:8080/error\",\n        \"responseBody\": \"{\\n  \\\"title\\\" : \\\"Unavailable Service\\\",\\n  \\\"status\\\" : 503,\\n  \\\"englishMessage\\\" : \\\"Called Service is not available now, kindly try again later\\\",\\n  \\\"arabicMessage\\\" : \\\"الخدمة غير متوفرة حاليا, أرجو المحاولة لاحقاً مرة أخرى\\\"\\n}\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ws/rest-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ws",
+						"rest-logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Rest Log",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 5,\n        \"correlationId\": \"394eb08939b7efff\",\n        \"httpMethod\": \"GET\",\n        \"httpStatus\": 503,\n        \"requestUrl\": \"http://localhost:8080/error\",\n        \"responseBody\": \"{\\n  \\\"title\\\" : \\\"Unavailable Service\\\",\\n  \\\"status\\\" : 503,\\n  \\\"englishMessage\\\" : \\\"Called Service is not available now, kindly try again later\\\",\\n  \\\"arabicMessage\\\" : \\\"الخدمة غير متوفرة حاليا, أرجو المحاولة لاحقاً مرة أخرى\\\"\\n}\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ws/rest-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ws",
+						"rest-logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Rest Logs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjA4MzU0NH0.Xwu2PM2glm6kTyGv4LX_GDP9LK6UFgH4jLRDeqDmM50KWOuUhgfuMHBMLgxC3K8BANax24ddrwFyhSij25sDoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ws/rest-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ws",
+						"rest-logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

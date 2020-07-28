@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20190401034746-sql-1" author="Rami Nassar">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sct/application-type/20190401034746_sql_ApplicationType_001.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20190401034746-sql-2" author="Mohammad Qasim">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sct/application-type/20190401034746_sql_ApplicationType_002.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+</databaseChangeLog>

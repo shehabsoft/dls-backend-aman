@@ -1,0 +1,16 @@
+/**
+ * Entity Audit Configuration entity.
+ * @author Mena Emiel.
+ */
+entity EntityAuditConfiguration {
+	entityName String unique required,
+	needsAudit Boolean required
+}
+
+
+// Set pagination options
+paginate EntityAuditConfiguration with pagination
+
+
+// Set service options to the entity
+service all with serviceImpl

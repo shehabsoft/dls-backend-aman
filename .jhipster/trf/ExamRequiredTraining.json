@@ -1,0 +1,34 @@
+{
+    "name": "ExamTraining",
+    "fields": [
+        {
+            "fieldName": "tryCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "englishTrainingTypeDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "arabicTrainingTypeDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "minRequiredLessonsNo",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190617050005",
+    "javadoc": "Exam Required Training entity.\n@author Yousef.",
+    "entityTableName": "exam_required_training",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": false
+}

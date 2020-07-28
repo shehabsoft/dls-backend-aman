@@ -1,0 +1,43 @@
+/**
+ * The Automated Job Configuration entity.
+ * @author Tariq Abu Amireh
+ */
+entity AutomatedJobConfig {
+    jobName String unique required,
+    cron String,
+    fixedDelay Long,
+    initialDelay Long,
+    fixedRate Long,
+    status JobStatus required
+}
+
+enum JobStatus {
+    ACTIVE,
+    INACTIVE
+}
+
+/**
+ * The Automated Job Audit entity.
+ * @author Tariq Abu Amireh
+ */
+entity AutomatedJobAudit {
+    jobName String required,
+    startTime Instant required,
+    endTime Instant,
+    durationInSeconds Long,
+    cron String,
+    fixedDelay Long,
+    initialDelay Long,
+    fixedRate Long,
+    technicalRemarks String
+}
+
+// Set pagination options
+paginate AutomatedJobConfig with pagination
+paginate AutomatedJobAudit with pagination
+
+// Use Data Transfert Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

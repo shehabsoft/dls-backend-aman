@@ -1,0 +1,12 @@
+/**
+ * Driving License entity.
+ * @author Yousef.
+ */
+entity DrivingLicenseView {
+        emiratesId String,
+	status Integer
+}
+
+service all with serviceImpl
+
+dto * with mapstruct

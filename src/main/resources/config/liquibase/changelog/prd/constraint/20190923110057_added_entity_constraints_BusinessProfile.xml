@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Business Profile.
+    -->
+
+    <changeSet id="20190923110057-constraint-1" author="Yousef/Rami">
+        <sql dbms="oracle">
+            ALTER TABLE prd_business_profile ADD CONSTRAINT CK_BUPR_PRODUCT_DOCUMENT CHECK (PRODUCT_DOCUMENT IS JSON)
+        </sql>
+        <createIndex tableName="prd_business_profile" indexName="I_BUPR_CREATED_DATE" >
+            <column  name="CREATED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="prd_business_profile" indexName="I_BUPR_LAST_MODIFIED_DATE" >
+            <column  name="LAST_MODIFIED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="prd_business_profile" indexName="I_BUPR_PD_TRAFFIC_CODE_NO" unique="true">
+            <column  name="JSON_VALUE(PRODUCT_DOCUMENT, '$.customerInfo.trafficCodeNo' RETURNING NUMBER(38) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="prd_business_profile" indexName="I_BUPR_PD_EMIRATE_ID" unique="true">
+            <column  name="JSON_VALUE(PRODUCT_DOCUMENT, '$.customerInfo.emiratesId' RETURNING VARCHAR2(18) ERROR ON ERROR)"></column>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

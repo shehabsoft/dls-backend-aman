@@ -1,0 +1,44 @@
+{
+    "name": "DrivingLicense",
+    "fields": [
+        {
+            "fieldName": "serviceRequestId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "applicationId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productDocument",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "technicalRemarks",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190617092402",
+    "javadoc": "DrivingLicense (prd_driving_license) entity.\n@author Mena Emiel.",
+    "entityTableName": "drli",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

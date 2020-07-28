@@ -1,0 +1,61 @@
+{
+    "name": "LicenseCategory",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "LicenseCategoryStatus",
+            "fieldValues": "ACTIVE,INACTIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "utsMappingCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "vehicleType",
+            "otherEntityName": "vehicleType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "globalLicenseCategory",
+            "otherEntityName": "globalLicenseCategory",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190407094240",
+    "javadoc": "The License Category entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "license_category",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

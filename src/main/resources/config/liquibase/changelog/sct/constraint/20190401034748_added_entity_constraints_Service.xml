@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Service.
+    -->
+    <changeSet id="20190401034748-constraint-1" author="Rami Nassar">
+
+        <addForeignKeyConstraint baseColumnNames="application_type_id"
+                                 baseTableName="sct_service"
+                                 constraintName="fk_serv_application_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sct_application_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_group_id"
+                                 baseTableName="sct_service"
+                                 constraintName="fk_serv_service_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sct_service_group"/>
+
+    </changeSet>
+
+    <changeSet id="20190401034748-constraint-2" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sct_service ADD CONSTRAINT ck_serv_name CHECK (name IS JSON)
+        </sql>
+    </changeSet>
+    <changeSet id="20190401034748-constraint-3" author="Ahmad Abo AlShamat">
+        <createIndex tableName="sct_service" indexName="UX_SERV_NAME_AR" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.ar' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_service" indexName="UX_SERV_NAME_EN" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.en' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_service" indexName="I_SERV_APPLICATION_TYPE_ID" >
+            <column  name="APPLICATION_TYPE_ID"></column>
+        </createIndex>
+        <createIndex tableName="sct_service" indexName="I_SERV_SERVICE_GROUP_ID" >
+            <column  name="SERVICE_GROUP_ID"></column>
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>

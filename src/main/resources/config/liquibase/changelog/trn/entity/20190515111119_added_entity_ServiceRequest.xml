@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity sequence.
+    -->
+    <changeSet id="20190515111119-seq-1" author="Mena Emiel">
+        <createSequence sequenceName="sere_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity ServiceRequest.
+    -->
+    <changeSet id="20190515111119-1" author="Mena Emiel">
+        <createTable tableName="trn_service_request" remarks="ServiceRequest (trn_service_request) entity. @author Mena Emiel.">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="service_document" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="application_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="service_code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="phase_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status_description" type="varchar(4000)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="status_date" type="datetime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="total_fee_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="paid_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="payment_method" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="payment_reference" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="payment_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejected_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejection_reason" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rejection_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="process_instance_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="reversed_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="synched_entity_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_sere_synched_entity_id"/>
+            </column>
+
+            <column name="fee_document" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="trn_service_request" columnName="status_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="trn_service_request" columnName="payment_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="trn_service_request" columnName="rejection_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190515111119-audit-1" author="Mena Emiel">
+        <addColumn tableName="trn_service_request">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

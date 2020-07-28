@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Application Type.
+    -->
+    <changeSet id="20190401034746-constraint-1" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sct_application_type ADD CONSTRAINT ck_apty_description CHECK (description IS JSON)
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190401034746-constraint-2" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sct_application_type ADD CONSTRAINT ck_apty_summary CHECK (summary IS JSON)
+        </sql>
+    </changeSet>
+    <changeSet id="20190401034746-constraint-3" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="sct_application_type" indexName="UX_APTY_DESCRIPTION_AR" unique="true" >
+            <column  name="JSON_VALUE(DESCRIPTION, '$.ar' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_application_type" indexName="UX_APTY_DESCRIPTION_EN" unique="true" >
+            <column  name="JSON_VALUE(DESCRIPTION, '$.en' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sct_application_type" indexName="I_APTY_STATUS" >
+            <column  name="STATUS"></column>
+        </createIndex>
+        <addUniqueConstraint constraintName="UX_APTY_SORT_ORDER" tableName="sct_application_type" columnNames="SORT_ORDER" />
+        <addNotNullConstraint tableName="sct_application_type" columnName="SORT_ORDER"  columnDataType="NUMBER(38,0)"/>
+
+    </changeSet>
+</databaseChangeLog>

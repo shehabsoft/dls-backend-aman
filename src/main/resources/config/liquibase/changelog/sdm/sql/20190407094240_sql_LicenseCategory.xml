@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20190407094240-sql-1" author="Mohammad Qasim" >
+
+        <addColumn tableName="sdm_license_category">
+            <column name="HANDBOOK_TYPE" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+
+        <sql>
+            UPDATE SDM_LICENSE_CATEGORY SET HANDBOOK_TYPE = 'HB_LMV' WHERE CODE IN ('VCL_ID_3','VCL_ID_4');
+            UPDATE SDM_LICENSE_CATEGORY SET HANDBOOK_TYPE = 'HB_MC' WHERE CODE = 'VCL_ID_1';
+            UPDATE SDM_LICENSE_CATEGORY SET HANDBOOK_TYPE = 'HB_HMV_BUS' WHERE CODE IN ('VCL_ID_5','VCL_ID_6','VCL_ID_7');
+            UPDATE SDM_LICENSE_CATEGORY SET HANDBOOK_TYPE = 'HB_LME' WHERE CODE = 'VCL_ID_8';
+            UPDATE SDM_LICENSE_CATEGORY SET HANDBOOK_TYPE = 'HB_HME' WHERE CODE = 'VCL_ID_9';
+        </sql>
+
+    </changeSet>
+
+    <changeSet id="20190407094240-sql-2" author="Sherif Thabet" >
+            <sqlFile dbms="h2, oracle" encoding="utf8"
+                     path="config/liquibase/sql/sdm/license-category/20190407094240_sql_LicenseCategory_002.sql"
+                     splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20190407094240-sql-3" author="Mohammad Qasim" >
+
+        <addColumn tableName="sdm_license_category">
+            <column name="sort_order" type="integer">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sdm/license-category/20190407094240_sql_LicenseCategory_003.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+      Added the entity sequence.
+    -->
+    <changeSet id="20190219132938-seq-1" author="Mena Emiel">
+        <createSequence sequenceName="dova_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+
+    <!--
+        Added the entity DomainValue.
+    -->
+    <changeSet id="20190219132938-1" author="Mena Emiel">
+        <createTable tableName="sys_domain_value" remarks="The DomainValue entity. @author Mena Emiel.">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="description" type="varchar(4000)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sort_order" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="domain_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+    </changeSet>
+
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190219132938-audit-1" author="Mena Emiel">
+        <addColumn tableName="sys_domain_value">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
+    <!-- Include SQL of Domain Value -->
+    <include file="../sql/20190219132938_sql_DomainValue.xml" relativeToChangelogFile="true" />
+
+</databaseChangeLog>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Application Type.
+    -->
+    <changeSet id="20190722075747-constraint-1" author="Mohammad Qasim">
+        <sql dbms="oracle">
+            ALTER TABLE prd_hand_book ADD CONSTRAINT ck_habo_PRODUCT_DOCUMENT CHECK (PRODUCT_DOCUMENT IS JSON)
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190722075747-constraint-2" author="Ahmad Abo AlShamat">
+        <createIndex tableName="prd_hand_book" indexName="I_HABO_CREATED_DATE" >
+            <column  name="CREATED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="prd_hand_book" indexName="I_HABO_LAST_MODIFIED_DATE" >
+            <column  name="LAST_MODIFIED_DATE"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

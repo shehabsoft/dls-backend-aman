@@ -1,0 +1,44 @@
+{
+    "name": "Handbook",
+    "fields": [
+        {
+            "fieldName": "serviceRequestId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "applicationId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productDocument",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "technicalRemarks",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190722075747",
+    "javadoc": "HandBook (prd_hand_book) entity.\n@author Mohammad Qasim.",
+    "entityTableName": "prd_hand_book",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

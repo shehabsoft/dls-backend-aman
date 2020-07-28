@@ -1,0 +1,117 @@
+{
+    "name": "ServiceRequest",
+    "fields": [
+        {
+            "fieldName": "serviceDocument",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "phaseType",
+            "fieldType": "PhaseType",
+            "fieldValues": "CUSTOMER_ELIGIBILITY,DRIVING_LEARNING_FILE_PROCESSING,DRIVING_LEARNING_FILE_AUDIT_PHASE,READY_FOR_CONTRACT_SIGN_PHASE,EYE_TEST_PHASE,THEORY_LECTURE_PHASE,KNOWLEDGE_TEST_PHASE,PRACTICAL_TRAINING_PHASE,YARD_TEST_PHASE,ADVANCED_PRACTICAL_TRAINING_PHASE,ROAD_TEST_PHASE,PRINT_LICENSE_PHASE,APPLICATION_REJECTION_PHASE,EXEMPTION_AUDITING_PHASE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ServiceRequestStatus",
+            "fieldValues": "UNDER_PROCESSING,VERIFIED_AND_LOCKED,CONFIRMED,REJECTED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statusDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statusDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "totalFeeAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "paidBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentMethod",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "paymentReference",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "paymentDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "rejectedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectionReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectionDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "processInstanceId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "application",
+            "otherEntityName": "application",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "service",
+            "otherEntityRelationshipName": "serviceRequest",
+            "relationshipName": "service",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationViolation",
+            "otherEntityRelationshipName": "serviceRequest",
+            "relationshipName": "applicationViolation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceRequest",
+            "otherEntityRelationshipName": "serviceRequest",
+            "relationshipName": "reversedBy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190515111119",
+    "javadoc": "ServiceRequest (trn_service_request) entity.\n@author Mena Emiel.",
+    "entityTableName": "sere",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

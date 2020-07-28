@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "2b1d229a-8e52-4766-9a4c-1b71711472ce",
+		"name": "Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Service ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": 222,\n  \"journeySetupId\": 2,\n  \"name\": {\n    \"ar\": \"معاملة رخصة القيادة\",\n    \"en\": \"Driving License Service\"\n  },\n  \"serviceGroupId\": 1,\n  \"status\": \"ACTIVE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Services",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "1556103930195",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"code\": 1,\n    \"name\": {\n        \"ar\": \"فتح ملف تعلم\",\n        \"en\": \"Open Driving Learning File\"\n    },\n    \"status\": \"ACTIVE\",\n    \"applicationTypeId\": 1,\n    \"serviceGroupId\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/services/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"services",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity LicenseCategory.
+    -->
+    <changeSet id="20190407094240-constraint-1" author="Rami Nassar">
+
+        <addForeignKeyConstraint baseColumnNames="global_license_category_id"
+                                 baseTableName="sdm_license_category"
+                                 constraintName="fk_lica_gllc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sdm_global_license_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="local_license_category_id"
+                                 baseTableName="sdm_license_category"
+                                 constraintName="fk_lica_lica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sdm_license_category"/>
+
+        <sql dbms="oracle">
+            ALTER TABLE sdm_license_category ADD CONSTRAINT ck_lica_uts_mapping_code CHECK (NOT(country_code = 'ARE' AND uts_mapping_code IS NULL))
+        </sql>
+
+        <sql dbms="oracle">
+            ALTER TABLE sdm_license_category ADD CONSTRAINT ck_lica_local_license_category CHECK (NOT(country_code = 'ARE' AND local_license_category_id IS NOT NULL))
+        </sql>
+    </changeSet>
+    <changeSet id="20190407094240-constraint-2" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="sdm_license_category" indexName="I_LICA_GLOBAL_LIC_CAT_ID" >
+            <column  name="GLOBAL_LICENSE_CATEGORY_ID"></column>
+        </createIndex>
+        <createIndex tableName="sdm_license_category" indexName="I_LICA_LOCAL_LIC_CAT_ID" >
+            <column  name="LOCAL_LICENSE_CATEGORY_ID"></column>
+        </createIndex>
+        <createIndex tableName="sdm_license_category" indexName="I_LICA_COUNTRY_CODE" >
+            <column  name="COUNTRY_CODE"></column>
+        </createIndex>
+        <createIndex tableName="sdm_license_category" indexName="I_LICA_CITY_CODE" >
+            <column  name="CITY_CODE"></column>
+        </createIndex>
+        <createIndex tableName="sdm_license_category" indexName="I_LICA_UTS_MAPPING_CODE" >
+            <column  name="UTS_MAPPING_CODE"></column>
+        </createIndex>
+        <sql dbms="oracle,h2">
+            create unique index UX_LICA_LOCAL_CATEGORY_ID on sdm_license_category(CASE   WHEN CITY_CODE IS NOT NULL
+                                                                                    THEN 'Duplicates records found for COUNTRY_CODE=' || COUNTRY_CODE || ' , CITY_CODE=' || CITY_CODE ||
+                                                                                         ' ,GLOBAL_LICENSE_CATEGORY_ID=' ||GLOBAL_LICENSE_CATEGORY_ID|| ' ,LOCAL_LICENSE_CATEGORY_ID=' ||LOCAL_LICENSE_CATEGORY_ID
+                                                                                    WHEN CITY_CODE IS  NULL
+                                                                                    THEN 'Duplicates records found for COUNTRY_CODE=' || COUNTRY_CODE ||
+                                                                                         ' ,GLOBAL_LICENSE_CATEGORY_ID=' ||GLOBAL_LICENSE_CATEGORY_ID|| ' ,LOCAL_LICENSE_CATEGORY_ID=' ||LOCAL_LICENSE_CATEGORY_ID
+                                                                                    ELSE null END);
+            ALTER TABLE sdm_license_category ADD CONSTRAINT CK_LICA_COUNTRY_CODE CHECK (UPPER(COUNTRY_CODE) = COUNTRY_CODE);
+            ALTER TABLE sdm_license_category ADD CONSTRAINT CK_LICA_CITY_CODE CHECK (UPPER(CITY_CODE) = CITY_CODE);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190407094240-constraint-3" author="Mohammad Qasim">
+        <sql dbms="oracle,h2">
+            CREATE UNIQUE INDEX UX_LICA_CNT_CODE_SORT_ORDER
+                ON SDM_LICENSE_CATEGORY ((CASE when SORT_ORDER IS NOT NULL
+                                            THEN COUNTRY_CODE || ',' || SORT_ORDER
+                                          ELSE NULL END));
+        </sql>
+    </changeSet>
+</databaseChangeLog>

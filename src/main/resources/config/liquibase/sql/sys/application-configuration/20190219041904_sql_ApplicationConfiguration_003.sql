@@ -1,0 +1,2 @@
+INSERT INTO SYS_APPLICATION_CONFIGURATION (ID, CONFIG_KEY, CONFIG_VALUE, DESCRIPTION, CACHED, ENCRYPTED, CREATED_BY, CREATED_DATE, LAST_MODIFIED_BY, LAST_MODIFIED_DATE)
+ VALUES (APCO_SEQ.NEXTVAL, 'service.trn.maximumlicenseexpirationperiod', '10', '{"ar":"الحد الأقصى لفترة انتهاء الرخصة بالسنة","en":"Maximum License Expiration Period in years"}', 1, 0, 'DLS_SYSTEM', SYSDATE, 'DLS_SYSTEM', SYSDATE);

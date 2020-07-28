@@ -1,0 +1,59 @@
+{
+    "name": "AutomatedJobAudit",
+    "fields": [
+        {
+            "fieldName": "jobName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "durationInSeconds",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cron",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedDelay",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "initialDelay",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fixedRate",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "technicalRemarks",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190318084830",
+    "javadoc": "The Automated Job Audit entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "automated_job_audit",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ApplicationConfiguration.
+    -->
+    <changeSet id="20190219041904-constraint-1" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sys_application_configuration ADD CONSTRAINT ck_apco_description CHECK (description IS JSON)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20190219132937-sql-1" author="Rami Nassar">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sys/domain/20190219132937_sql_Domain_001.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20190219132937-sql-2" author="Mohammad Qasim">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sys/domain/20190219132937_sql_Domain_002.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20190219132937-sql-3" author="Mohammad Qasim">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sys/domain/20190219132937_sql_Domain_003.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+
+    <changeSet id="20190219132937-sql-4" author="Mohammad Qasim">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sys/domain/20190219132937_sql_Domain_004.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="20190219132937-sql-5" author="Yousef">
+        <sqlFile dbms="h2, oracle" encoding="utf8"
+                 path="config/liquibase/sql/sys/domain/20190219132937_sql_Domain_005.sql"
+                 splitStatements="true" stripComments="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ApplicationPhase.
+    -->
+    <changeSet id="20190515111118-constraint-1" author="Mena Emiel">
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="trn_application_phase"
+                                 constraintName="fk_apph_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_application"/>
+
+    </changeSet>
+    <changeSet id="20190515111118-constraint-2" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="trn_application_phase" indexName="I_APPH_APPLICATION_ID" >
+            <column  name="APPLICATION_ID"></column>
+        </createIndex>
+        <addUniqueConstraint constraintName="UX_APPH_APPL_ID_PHASE_SEQ" tableName="trn_application_phase" columnNames="APPLICATION_ID, PHASE_SEQUENCE" />
+    </changeSet>
+</databaseChangeLog>

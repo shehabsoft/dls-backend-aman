@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Application.
+    -->
+    <changeSet id="20190515111115-constraint-1" author="Mena Emiel">
+
+        <addForeignKeyConstraint baseColumnNames="application_type_id"
+                                 baseTableName="trn_application"
+                                 constraintName="fk_appl_application_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sct_application_type"/>
+        <sql dbms="oracle">
+            ALTER TABLE trn_application ADD CONSTRAINT ck_appl_status_description CHECK (status_description IS JSON)
+        </sql>
+        <sql dbms="oracle">
+            ALTER TABLE trn_application ADD CONSTRAINT ck_appl_user_type_description CHECK (user_type_description IS JSON)
+        </sql>
+        <sql dbms="oracle">
+            ALTER TABLE trn_application ADD CONSTRAINT ck_appl_application_criteria CHECK (application_criteria IS JSON)
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190630073402-constraint-2" author="Mohammad Abulawi">
+        <sql dbms="oracle">
+
+            CREATE INDEX
+            I_APP_AC_MO_NO_DOB
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.mobileNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.birthdate' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_EID_EID_E_D
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.eidNumber' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.eidExpiryDate' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_NA_PA_PED
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.nationalityCode' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.passportNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.passportExpiryDate' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_CORPORATE
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.corporate.tradeLicenseNo' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_RTA_REV_STATUS
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.rtaReviewStatus' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_DS_REV_STATUS
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.drivingSchoolReviewStatus' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+            CREATE INDEX
+            I_APP_AC_CO_RTA_DSC
+            ON TRN_APPLICATION
+            (JSON_VALUE(APPLICATION_CRITERIA, '$.corporate.tradeLicenseNo' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.rtaReviewStatus' RETURNING VARCHAR2(200) NULL ON ERROR),
+            JSON_VALUE(APPLICATION_CRITERIA, '$.drivingSchoolReviewStatus' RETURNING VARCHAR2(200) NULL ON ERROR));
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190630073402-constraint-3" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_USER_ID">
+            <column name="USER_ID" />
+        </createIndex>
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_TRADE_LICENSE_NO">
+            <column name="TRADE_LICENSE_NO" />
+        </createIndex>
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_APPLICATION_TYPE_ID">
+            <column name="APPLICATION_TYPE_ID" />
+        </createIndex>
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_STATUS">
+            <column name="STATUS" />
+        </createIndex>
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_STATUS_DATE">
+            <column name="STATUS_DATE" />
+        </createIndex>
+    </changeSet>
+    <changeSet id="20190630073402-constraint-4" author="Ahmad Abo AlShamat">
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_CREATED_DATE" >
+            <column  name="CREATED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_LAST_MODIFIED_DATE" >
+            <column  name="LAST_MODIFIED_DATE"></column>
+        </createIndex>
+    </changeSet>
+    <changeSet id="20190630073402-constraint-5" author="Yousef Abu Amireh">
+        <createIndex tableName="TRN_APPLICATION" indexName="I_APPL_ACTIVE_PHASE" >
+            <column  name="ACTIVE_PHASE"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

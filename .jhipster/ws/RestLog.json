@@ -1,0 +1,49 @@
+{
+    "name": "RestLog",
+    "fields": [
+        {
+            "fieldName": "correlationId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "httpMethod",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "httpStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "requestUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "requestBody",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "responseBody",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190318032747",
+    "javadoc": "Rest Log entity.\n\n@author Rami Nassar",
+    "entityTableName": "rest_log",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

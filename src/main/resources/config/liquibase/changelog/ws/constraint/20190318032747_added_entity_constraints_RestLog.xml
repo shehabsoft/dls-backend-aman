@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ServiceRequest.
+    -->
+    <changeSet id="20190318032747-constraint-1" author="Rami Nassar">
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="ws_rest_log"
+                                 constraintName="fk_relo_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_application"/>
+    </changeSet>
+
+    <changeSet id="20190318032747-constraint-2" author="Rami Nassar">
+        <dropForeignKeyConstraint baseTableName="ws_rest_log" constraintName="fk_relo_application_id"/>
+    </changeSet>
+    <changeSet id="20190318032747-constraint-3" author="Ahmad Abo AlShamat">
+        <createIndex tableName="ws_rest_log" indexName="I_RELO_CREATED_DATE" >
+            <column  name="CREATED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="ws_rest_log" indexName="I_RELO_REQUEST_URL"  >
+            <column  name="REQUEST_URL"></column>
+        </createIndex>
+        <createIndex tableName="ws_rest_log" indexName="I_RELO_APPLICATION_ID"  >
+            <column  name="APPLICATION_ID"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

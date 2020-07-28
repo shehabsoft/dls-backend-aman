@@ -1,0 +1,50 @@
+{
+    "name": "BrmRestLog",
+    "fields": [
+        {
+            "fieldName": "correlationId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "httpMethod",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "httpStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "requestUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "requestBody",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "responseBody",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190423093125",
+    "javadoc": "BRM Rest Log entity.\n\n@author Rami Nassar",
+    "entityTableName": "brm_rest_log",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

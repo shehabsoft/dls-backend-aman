@@ -1,0 +1,16 @@
+/**
+ * Held License Template entity.
+ * @author Yousef.
+ */
+entity ForeignLicenseTemplateView {
+        arabicName String,
+        englishName String,
+	backSideTemplate ImageBlob,
+	frontSideTemplate ImageBlob,
+	countryId Long,
+	stateId Long
+}
+
+service all with serviceImpl
+
+dto * with mapstruct

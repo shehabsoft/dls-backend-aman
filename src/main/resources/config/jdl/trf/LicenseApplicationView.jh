@@ -1,0 +1,13 @@
+/**
+ * License Application entity.
+ * @author Ahmad Abo AlShamat.
+ */
+entity LicenseApplicationView {
+        emiratesId String,
+	    vclId Integer,
+	    status Integer
+}
+
+service all with serviceImpl
+
+dto * with mapstruct

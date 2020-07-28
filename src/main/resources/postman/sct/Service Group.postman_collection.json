@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "1763c544-1791-4a6f-865e-ed2896b3ef68",
+		"name": "Service Group",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Servicec Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkxMjYxMTQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.28SB8A-vFblQBCU4mv2g8DLnGFhFJEP1yREImgFMToER3GdME-MuY3o6gtIAnwYDks94NQsOL9svfEae7IYW0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"TEST_CODE\",\n  \"iconContentType\": \"jpg\",\n  \"name\": {\n        \"ar\": \"مجموعة خدمات ترخيص السائقين\",\n        \"en\": \"Driving License Services Group\"\n    },\n  \"status\": \"ACTIVE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/service-groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"service-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service Groups By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkxMjYxMTQsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.28SB8A-vFblQBCU4mv2g8DLnGFhFJEP1yREImgFMToER3GdME-MuY3o6gtIAnwYDks94NQsOL9svfEae7IYW0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/service-groups/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"service-groups",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Service Groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/service-groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"service-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Service Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/service-groups/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"service-groups",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Service Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "1558972675000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"code\": \"1\",\n    \"name\": {\n        \"ar\": \"إدارة مواعيد الفحص\",\n        \"en\": \"Manage Driving Test\"\n    },\n    \"status\": \"ACTIVE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/service-groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"service-groups"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

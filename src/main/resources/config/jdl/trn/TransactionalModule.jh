@@ -1,0 +1,149 @@
+/**
+ * Application (trn_application) entity.
+ * @author Mena Emiel.
+ */
+entity Application (appl) {
+    status ApplicationStatus required,
+    statusDescription String required,
+    statusDate Instant required,
+    activePhase PhaseType required,
+    confirmedBy String,
+    confirmationDate Instant,
+    rejectedBy String,
+    rejectionReason String,
+    rejectionDate Instant,
+    processInstanceId Long unique,
+    channelCode String required,
+    channelDescription String required,
+    customerId String,
+    customerName String,
+    tradeLicenseNo String,
+    corporateName String,
+    userType String required,
+    userTypeDescription String required,
+    userRole String required,
+    applicationCriteria String
+}
+
+enum ApplicationStatus {
+    NEW, 
+    UNDER_PROCESSING, 
+    COMPLETED,
+    REJECTED
+}
+
+/**
+ * ApplicationType entity.
+ * @author Mena Emiel.
+ */
+entity ApplicationType (apty) {
+	code String required
+}
+
+
+/**
+ * ApplicationPhase (trn_application_phase) entity.
+ * @author Mena Emiel.
+ */
+entity ApplicationPhase (apph) {
+	type PhaseType required,
+    sequence Integer required,
+    startDate Instant required,
+    endDate Instant,
+    persona String required
+}
+
+enum PhaseType {
+    CUSTOMER_ELIGIBILITY, 
+    DRIVING_LEARNING_FILE_PROCESSING, 
+    DRIVING_LEARNING_FILE_AUDIT,
+    READY_FOR_CONTRACT_SIGN,
+    EYE_TEST,
+    THEORY_LECTURE,
+    KNOWLEDGE_TEST,
+    PRACTICAL_TRAINING,
+    YARD_TEST,
+    ADVANCED_PRACTICAL_TRAINING,
+    ROAD_TEST,
+    PRINT_LICENSE,
+    APPLICATION_REJECTION,
+    EXEMPTION_AUDITING
+}
+
+/**
+ * ServiceRequest (trn_service_request) entity.
+ * @author Mena Emiel.
+ */
+entity ServiceRequest (sere) {
+    serviceDocument TextBlob,
+    feeDocument TextBlob,
+    serviceCode String required,
+    phaseType PhaseType required,
+    status ServiceRequestStatus required,
+    statusDescription String required,
+    statusDate Instant required,
+    totalFeeAmount Double,
+    paidBy String,
+    paymentMethod Integer,
+    paymentReference Long,
+    paymentDate Instant,
+    rejectedBy String,
+    rejectionReason String,
+    rejectionDate Instant,
+    processInstanceId Long
+}
+
+enum ServiceRequestStatus {
+    UNDER_PROCESSING, 
+    VERIFIED_AND_LOCKED,
+    CONFIRMED,
+    REJECTED
+}
+
+/**
+ * ApplicationViolation (trn_application_violation) entity.
+ * @author Mena Emiel.
+ */
+entity ApplicationViolation (apvi) {
+	code String required,
+    isEligibleForExemption Boolean required,
+    isExempted Boolean required,
+    level ViolationLevel required,
+    exemptionProcessId Long,
+    exemptedBy String,
+    exemptionDate Instant
+}
+
+enum ViolationLevel {
+	BLOCKER,
+    WARNING,
+    INFO
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany { 
+    Application{applicationPhase} to ApplicationPhase,
+    ServiceRequest{applicationViolation} to ApplicationViolation,
+    Application{serviceRequest} to ServiceRequest,
+    Application{applicationViolation} to ApplicationViolation
+}
+
+// defining multiple ManyToOne relationships with comments
+relationship ManyToOne {
+    ServiceRequest{reversedBy} to ServiceRequest,
+	Application{applicationType} to ApplicationType
+}
+
+
+// Set pagination options
+paginate Application with pagination
+paginate ApplicationPhase with pagination
+paginate ServiceRequest with pagination
+paginate ApplicationViolation with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options 
+service all with serviceImpl
+

@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "7bc3cd1c-06ec-4176-b547-1788a0e2e86d",
+		"name": "Application Type",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Application Types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New  Application Type",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjE4OTMyNH0.PUg3_5FXp7foOyO6oKzEVepaRfwgy9KydfpSzEzM7zaIxaCI0zWUME9A0pk2ED35korHfg6sDKlAfy115jtXyA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": 55,\n    \"description\": {\n        \"ar\": \"خدمات تصاريح القيادة المهنية\",\n        \"en\": \"Professional Driving Permit Service\"\n    },\n    \"summary\": {\n        \"ar\": \"القدم للحصول على تصريح قيادة صحراوية, الخ\",\n        \"en\": \"Apply for desert driving permits, etc.\"\n    },\n    \"status\": 1,\n    \"sortOrder\": 1,\n    \"iconContentType\": \"jpg\",\n    \"journeyRoute\": \"journeyRoute_3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Application Type By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjE4OTMyNH0.PUg3_5FXp7foOyO6oKzEVepaRfwgy9KydfpSzEzM7zaIxaCI0zWUME9A0pk2ED35korHfg6sDKlAfy115jtXyA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Application Type By Code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjE4OTMyNH0.PUg3_5FXp7foOyO6oKzEVepaRfwgy9KydfpSzEzM7zaIxaCI0zWUME9A0pk2ED35korHfg6sDKlAfy115jtXyA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types/code/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types",
+						"code",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Application Types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NjE4OTMyNH0.PUg3_5FXp7foOyO6oKzEVepaRfwgy9KydfpSzEzM7zaIxaCI0zWUME9A0pk2ED35korHfg6sDKlAfy115jtXyA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "1556116532000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 8,\n    \"code\": 99,\n    \"description\": {\n        \"ar\": \"خدمات تصاريح القيادة المهنية\",\n        \"en\": \"Professional Driving Permit Service asdasdsadas\"\n    },\n    \"summary\": {\n        \"ar\": \"القدم للحصول على تصريح قيادة صحراوية, الخ\",\n        \"en\": \"Apply for desert driving permits, etc.\"\n    },\n    \"status\": \"ACTIVE\",\n    \"sortOrder\": 2,\n    \"iconContentType\": \"jpg\",\n    \"journeyRoute\": \"journeyRoute_2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Application Type",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NTkwMjgyMDMsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiY2hhbm5lbENvZGUiOiJETFNfUE9SVEFMIiwiY3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIifQ.O_7SK_iE7FA-iS0e4jDj7TxlI3gDMptWaZ84qGyCs1IcXf6xLC6siTaF4TWXiCC6pBwX-vo9USLhzZbx-vG6iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sct/application-types/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sct",
+						"application-types",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

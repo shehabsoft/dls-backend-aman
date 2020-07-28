@@ -1,0 +1,19 @@
+/**
+ * Application Configuration entity.
+ *
+ * @author Rami Nassar
+ */
+entity ApplicationConfiguration {
+	configKey String unique required,
+	configValue String required,
+	description String required,
+	cached Boolean required,
+	encrypted Boolean required
+}
+
+paginate ApplicationConfiguration with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

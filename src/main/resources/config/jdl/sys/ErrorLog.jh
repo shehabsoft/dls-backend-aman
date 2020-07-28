@@ -1,0 +1,19 @@
+/**
+ * Error Log entity.
+ * @author Mena Emiel.
+ */
+entity ErrorLog {
+	source String required,
+	cause TextBlob,
+	message TextBlob required
+}
+
+
+// Set pagination options
+paginate ErrorLog with pagination
+
+
+// Set service options to the entity
+service all with serviceImpl
+
+

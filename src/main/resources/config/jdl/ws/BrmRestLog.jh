@@ -1,0 +1,20 @@
+/**
+ * BRM Rest Log entity.
+ *
+ * @author Rami Nassar
+ */
+entity BrmRestLog {
+    correlationId String,
+	httpMethod String required,
+	httpStatus Integer,
+	requestUrl String required,
+	requestBody TextBlob,
+	responseBody TextBlob
+}
+
+paginate BrmRestLog with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

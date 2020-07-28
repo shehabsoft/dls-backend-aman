@@ -1,0 +1,47 @@
+{
+    "name": "ServiceGroup",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ServiceGroupStatus",
+            "fieldValues": "ACTIVE,INACTIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "otherEntityRelationshipName": "serviceGroup"
+        }
+    ],
+    "changelogDate": "20190401034747",
+    "javadoc": "The Service Group entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "sys_service_group",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

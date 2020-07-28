@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ServiceRequest.
+    -->
+    <changeSet id="20190515111119-constraint-1" author="Mena Emiel">
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="trn_service_request"
+                                 constraintName="fk_sere_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_application"/>
+
+        <addForeignKeyConstraint baseColumnNames="reversed_by_id"
+                                 baseTableName="trn_service_request"
+                                 constraintName="fk_sere_reversed_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trn_service_request"/>
+        <sql dbms="oracle">
+            ALTER TABLE trn_service_request ADD CONSTRAINT ck_sere_service_document CHECK (service_document IS JSON)
+        </sql>
+        <sql dbms="oracle">
+            ALTER TABLE trn_service_request ADD CONSTRAINT ck_sere_status_description CHECK (status_description IS JSON)
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190515111119-constraint-2" author="Mohammad Abulawi">
+
+        <sql dbms="oracle">
+            ALTER TABLE trn_service_request ADD CONSTRAINT ck_sere_fee_document CHECK (fee_document IS JSON)
+        </sql>
+    </changeSet>
+
+    <changeSet id="20190515111119-constraint-3" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_APPLICATION_ID">
+            <column name="APPLICATION_ID" />
+        </createIndex>
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_SERVICE_CODE">
+            <column name="SERVICE_CODE" />
+        </createIndex>
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_STATUS">
+            <column name="STATUS" />
+        </createIndex>
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_STATUS_DATE">
+            <column name="STATUS_DATE" />
+        </createIndex>
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_REVERSED_BY_ID">
+            <column name="REVERSED_BY_ID" />
+        </createIndex>
+    </changeSet>
+    <changeSet id="20190515111119-constraint-4" author="Ahmad Abo AlShamat">
+
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_CREATED_DATE" >
+            <column  name="CREATED_DATE"></column>
+        </createIndex>
+        <createIndex tableName="TRN_SERVICE_REQUEST" indexName="I_SERE_LAST_MODIFIED_DATE" >
+            <column  name="LAST_MODIFIED_DATE"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

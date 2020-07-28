@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity License Category Code.
+    -->
+    <changeSet id="20190407094239-constraint-1" author="Rami Nassar">
+        <sql dbms="oracle">
+            ALTER TABLE sdm_global_license_category ADD CONSTRAINT ck_gllc_name CHECK (name IS JSON)
+        </sql>
+    </changeSet>
+    <changeSet id="20190407094239-constraint-2" author="Ahmad Abo AlShamat">
+
+        <sql dbms="oracle,h2">
+            UPDATE sdm_global_license_category
+            SET NAME = '{"ar":" 1 دراجة نارية","en":"دراجة نارية"}'
+            WHERE CODE =79
+        </sql>
+
+        <createIndex tableName="sdm_global_license_category" indexName="UX_GLLC_NAME_AR" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.ar' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+        <createIndex tableName="sdm_global_license_category" indexName="UX_GLLC_NAME_EN" unique="true" >
+            <column  name="JSON_VALUE(NAME, '$.en' RETURNING VARCHAR2(255) ERROR ON ERROR)"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

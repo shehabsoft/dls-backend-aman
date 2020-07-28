@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "8d0bfae5-5374-474e-8ac9-24a8370597e6",
+		"name": "service-reqeust",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create-service-request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXMiLCJhdXRoIjoiUk9MRV9BTk9OWU1PVVMiLCJleHAiOjE1NjEwMjg0OTgsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6ItmF2KzZh9mI2YQiLCJjaGFubmVsQ29kZSI6IkRMU19QT1JUQUwiLCJlbmdsaXNoQ3VzdG9tZXJOYW1lIjoiQW5vbnltb3VzIFVzZXIiLCJhcmFiaWNDdXN0b21lck5hbWUiOiLZhdiz2KrYrtiv2YUg2YjZh9mF2YoifQ.REGFt_nBaJp--QEoKtXAodZ73PCSHtxBQny5F2WLf7iPsiaE2LYKHHEzHJKtaW-CSgcEMQgPSa75ER_fPpeQBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"applicationReferenceNo\":1,\n\t\"serviceCode\":\"007\",\n\t\"serviceDocument\": {\n\t\t\"parameters\": {\n\t\t\t\"trafficCodeNo\":123456,\n\t\t\t\"handbookType\":125\t\n\t\t}\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/trn/service-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"trn",
+						"service-requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

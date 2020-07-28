@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity sequence.
+    -->
+    <changeSet id="20190213161837-seq-1" author="Mena Emiel">
+        <createSequence sequenceName="erlo_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity ErrorLog.
+    -->
+    <changeSet id="20190213161837-1" author="Mena Emiel">
+        <createTable tableName="sys_error_log" remarks="Error Log entity. @author Mena Emiel.">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="source" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cause" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="message" type="clob">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="20190213161837-2" author="Yousef Abu Amireh">
+        <addColumn tableName="sys_error_log">
+            <column name="application_id" type="bigint" />
+        </addColumn>
+    </changeSet>
+
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190213161837-audit-1" author="Mena Emiel">
+        <addColumn tableName="sys_error_log">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

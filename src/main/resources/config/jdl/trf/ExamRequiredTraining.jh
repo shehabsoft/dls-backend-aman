@@ -1,0 +1,14 @@
+/**
+ * Exam Required Training entity.
+ * @author Yousef.
+ */
+entity ExamTraining {
+	tryCode Integer,
+    englishTrainingTypeDescription String,
+    arabicTrainingTypeDescription String,
+	minRequiredLessonsNo Integer
+}
+
+service all with serviceImpl
+
+dto * with mapstruct

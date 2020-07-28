@@ -1,0 +1,44 @@
+{
+    "name": "ForeignLicenseTemplateView",
+    "fields": [
+        {
+            "fieldName": "arabicName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "englishName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "backSideTemplate",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "frontSideTemplate",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "countryId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "stateId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190915044800",
+    "javadoc": "Foreign License Template entity.\n@author Yousef.",
+    "entityTableName": "held_license_template_view",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": false
+}

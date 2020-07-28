@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "jobName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cron",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedDelay",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "initialDelay",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fixedRate",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "JobStatus",
+            "fieldValues": "ACTIVE,INACTIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20190318084829",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "sys_automated_job_config",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "javadoc": "The Automated Job Configuration entity.\n@author Tariq Abu Amireh",
+    "enableEntityAudit": true
+}

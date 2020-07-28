@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "13abd71a-4084-4124-9f3e-8454400859c6",
+		"name": "application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create application",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXNfdXNlciIsImF1dGgiOiJST0xFX0FOT05ZTU9VUyIsImV4cCI6MTU2MTk2NDQyMiwidXNlclR5cGUiOiJBTk9OWU1PVVMiLCJlbmdsaXNoVXNlclR5cGVEZXNjIjoiQW5vbnltb3VzIiwiYXJhYmljVXNlclR5cGVEZXNjIjoi2LrZitixINmF2KrYudin2LHZgSDYudmE2YrZhyIsImNoYW5uZWxDb2RlIjoiRExTX1BPUlRBTCIsImVuZ2xpc2hDdXN0b21lck5hbWUiOiJBbm9ueW1vdXMgVXNlciIsImFyYWJpY0N1c3RvbWVyTmFtZSI6ItmF2LPYqtiu2K_ZhSDZiNmH2YXZiiJ9.W60Zk37CkXvjZKV5AdKaTlkOs40JbELdODYVpTvXAU-zbRQGic11KieR0oOufjjicBlaY6slSsEf1jFOxIMuWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"applicationTypeId\": 1,\n\t\"applicationCriteria\": {\n            \"isExistingCustomer\": true\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/trn/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"trn",
+						"applications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create application",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"applicationTypeId\": 1,\n\t\"applicationCriteria\": {\n            \"isExistingCustomer\": true\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/trn/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"trn",
+								"applications"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-dlsBackendApp-params",
+							"value": "14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Location",
+							"value": "/api/trn/applications/14"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 30 Jun 2019 11:31:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "1561894295520"
+						},
+						{
+							"key": "X-dlsBackendApp-alert",
+							"value": "dlsBackendApp.dlsBackendApplication.created"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"applicationReferenceNo\": 14,\n    \"applicationTypeId\": 1,\n    \"applicationCriteria\": {\n        \"isExistingCustomer\": true\n    },\n    \"channelCode\": \"DLS_PORTAL\",\n    \"status\": \"DRAFT\",\n    \"statusDescription\": {\n        \"ar\": \"مسودة\",\n        \"en\": \"Draft\"\n    },\n    \"statusDate\": \"2019-06-30T11:31:35.448Z\",\n    \"activePhase\": \"CUSTOMER_ELIGIBILITY\",\n    \"customerId\": \"anonymous_user\",\n    \"englishCustomerName\": \"Anonymous User\",\n    \"arabicCustomerName\": \"مستخدم وهمي\",\n    \"userType\": \"ANONYMOUS\",\n    \"userTypeDescription\": {\n        \"ar\": \"غير متعارف عليه\",\n        \"en\": \"Anonymous\"\n    },\n    \"userRole\": \"ROLE_ANONYMOUS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get applications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXNfdXNlciIsImF1dGgiOiJST0xFX0FOT05ZTU9VUyIsImV4cCI6MTU2MTk2NDQyMiwidXNlclR5cGUiOiJBTk9OWU1PVVMiLCJlbmdsaXNoVXNlclR5cGVEZXNjIjoiQW5vbnltb3VzIiwiYXJhYmljVXNlclR5cGVEZXNjIjoi2LrZitixINmF2KrYudin2LHZgSDYudmE2YrZhyIsImNoYW5uZWxDb2RlIjoiRExTX1BPUlRBTCIsImVuZ2xpc2hDdXN0b21lck5hbWUiOiJBbm9ueW1vdXMgVXNlciIsImFyYWJpY0N1c3RvbWVyTmFtZSI6ItmF2LPYqtiu2K_ZhSDZiNmH2YXZiiJ9.W60Zk37CkXvjZKV5AdKaTlkOs40JbELdODYVpTvXAU-zbRQGic11KieR0oOufjjicBlaY6slSsEf1jFOxIMuWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/trn/applications/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"trn",
+						"applications",
+						"14"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get applications",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/trn/applications/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"trn",
+								"applications",
+								"14"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 30 Jun 2019 11:34:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "1561894418103"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"applicationReferenceNo\": 14,\n    \"applicationTypeId\": 1,\n    \"applicationCriteria\": {\n        \"isExistingCustomer\": false,\n        \"mobileNo\": \"971506254444\",\n        \"birthdate\": \"2000-06-20T07:58:42.849Z\",\n        \"eidNumber\": \"784-1988-3475979-5\",\n        \"eidExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"nationalityCode\": \"10\",\n        \"nationalityDescription\": {\n            \"ar\": \"الامارات\",\n            \"en\": \"Emirates\"\n        },\n        \"passportNo\": \"2231\",\n        \"passportExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"hasForeignLicense\": true,\n        \"eyeTest\": \"NOT_REQUIRED\",\n        \"theoryLecture\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"theoryTestResult\": \"NOT_REQUIRED\",\n        \"drivingLessons\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"yardTestResult\": \"NOT_REQUIRED\",\n        \"roadTestResult\": \"NOT_REQUIRED\",\n        \"averageQuotationPrice\": 2,\n        \"needsVipTrainingCourse\": false,\n        \"nocType\": \"FULFILLED_MANUAL_REVIEWED\",\n        \"corporate\": {\n            \"tradeLicenseNo\": \"111\",\n            \"englishName\": \"Emirates Driving Institute - Port Rashid\",\n            \"arabicName\": \"معهد الإمارات للسياقة - ميناء راشد\"\n        },\n        \"rtaReviewStatus\": \"ACCEPTED\",\n        \"drivingSchoolReviewStatus\": \"ACCEPTED\",\n        \"clearnceAmount\": true\n    },\n    \"channelCode\": \"DLS_PORTAL\",\n    \"status\": \"DRAFT\",\n    \"statusDescription\": {\n        \"ar\": \"مسودة\",\n        \"en\": \"Draft\"\n    },\n    \"statusDate\": \"2019-06-30T11:31:35.448Z\",\n    \"activePhase\": \"CUSTOMER_ELIGIBILITY\",\n    \"customerId\": \"anonymous_user\",\n    \"englishCustomerName\": \"Anonymous User\",\n    \"arabicCustomerName\": \"مستخدم وهمي\",\n    \"userType\": \"ANONYMOUS\",\n    \"userTypeDescription\": {\n        \"ar\": \"غير متعارف عليه\",\n        \"en\": \"Anonymous\"\n    },\n    \"userRole\": \"ROLE_ANONYMOUS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update-applications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXNfdXNlciIsImF1dGgiOiJST0xFX0FOT05ZTU9VUyIsImV4cCI6MTU2MTk2NDQyMiwidXNlclR5cGUiOiJBTk9OWU1PVVMiLCJlbmdsaXNoVXNlclR5cGVEZXNjIjoiQW5vbnltb3VzIiwiYXJhYmljVXNlclR5cGVEZXNjIjoi2LrZitixINmF2KrYudin2LHZgSDYudmE2YrZhyIsImNoYW5uZWxDb2RlIjoiRExTX1BPUlRBTCIsImVuZ2xpc2hDdXN0b21lck5hbWUiOiJBbm9ueW1vdXMgVXNlciIsImFyYWJpY0N1c3RvbWVyTmFtZSI6ItmF2LPYqtiu2K_ZhSDZiNmH2YXZiiJ9.W60Zk37CkXvjZKV5AdKaTlkOs40JbELdODYVpTvXAU-zbRQGic11KieR0oOufjjicBlaY6slSsEf1jFOxIMuWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "1561632816071",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"applicationReferenceNo\": 14,\n    \"applicationTypeId\": 1,\n    \"applicationCriteria\": {\n        \"isExistingCustomer\": \"false\",\n        \"mobileNo\": \"971506254444\",\n        \"birthdate\": \"2000-06-20T07:58:42.849Z\",\n        \"eidNumber\": \"784-1988-3475979-5\",\n        \"eidExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"nationalityCode\": \"10\",\n        \"nationalityDescription\": {\n            \"ar\": \"الامارات\",\n            \"en\": \"Emirates\"\n        },\n        \"passportNo\": \"2231\",\n        \"passportExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"hasForeignLicense\": true,\n        \"eyeTest\": \"NOT_REQUIRED\",\n        \"theoryLecture\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"theoryTestResult\": \"NOT_REQUIRED\",\n        \"drivingLessons\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"yardTestResult\": \"NOT_REQUIRED\",\n        \"roadTestResult\": \"NOT_REQUIRED\",\n        \"averageQuotationPrice\": 2,\n        \"needsVipTrainingCourse\": false,\n         \"nocType\": \"FULFILLED_MANUAL_REVIEWED\",\n        \"corporate\": {\n            \"tradeLicenseNo\": \"111\",\n            \"englishName\": \"Emirates Driving Institute - Port Rashid\",\n            \"arabicName\": \"معهد الإمارات للسياقة - ميناء راشد\"\n        },\n        \"rtaReviewStatus\": \"ACCEPTED\",\n        \"drivingSchoolReviewStatus\": \"ACCEPTED\",\n        \"clearnceAmount\": true\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/trn/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"trn",
+						"applications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update-applications",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-Match",
+								"value": "1561632816071",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"applicationReferenceNo\": 14,\n    \"applicationTypeId\": 1,\n    \"applicationCriteria\": {\n        \"isExistingCustomer\": \"false\",\n        \"mobileNo\": \"971506254444\",\n        \"birthdate\": \"2000-06-20T07:58:42.849Z\",\n        \"eidNumber\": \"784-1988-3475979-5\",\n        \"eidExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"nationalityCode\": \"10\",\n        \"nationalityDescription\": {\n            \"ar\": \"الامارات\",\n            \"en\": \"Emirates\"\n        },\n        \"passportNo\": \"2231\",\n        \"passportExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"hasForeignLicense\": true,\n        \"eyeTest\": \"NOT_REQUIRED\",\n        \"theoryLecture\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"theoryTestResult\": \"NOT_REQUIRED\",\n        \"drivingLessons\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"yardTestResult\": \"NOT_REQUIRED\",\n        \"roadTestResult\": \"NOT_REQUIRED\",\n        \"averageQuotationPrice\": 2,\n        \"needsVipTrainingCourse\": false,\n         \"nocType\": \"FULFILLED_MANUAL_REVIEWED\",\n        \"corporate\": {\n            \"tradeLicenseNo\": \"111\",\n            \"englishName\": \"Emirates Driving Institute - Port Rashid\",\n            \"arabicName\": \"معهد الإمارات للسياقة - ميناء راشد\"\n        },\n        \"rtaReviewStatus\": \"ACCEPTED\",\n        \"drivingSchoolReviewStatus\": \"ACCEPTED\",\n        \"clearnceAmount\": true\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/dlsbackend/api/trn/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dlsbackend",
+								"api",
+								"trn",
+								"applications"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-dlsBackendApp-params",
+							"value": "14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 30 Jun 2019 11:33:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "1561894295520"
+						},
+						{
+							"key": "X-dlsBackendApp-alert",
+							"value": "dlsBackendApp.dlsBackendApplication.updated"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"applicationReferenceNo\": 14,\n    \"applicationTypeId\": 1,\n    \"applicationCriteria\": {\n        \"isExistingCustomer\": false,\n        \"mobileNo\": \"971506254444\",\n        \"birthdate\": \"2000-06-20T07:58:42.849Z\",\n        \"eidNumber\": \"784-1988-3475979-5\",\n        \"eidExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"nationalityCode\": \"10\",\n        \"nationalityDescription\": {\n            \"ar\": \"الامارات\",\n            \"en\": \"Emirates\"\n        },\n        \"passportNo\": \"2231\",\n        \"passportExpiryDate\": \"2019-06-20T07:58:42.849Z\",\n        \"hasForeignLicense\": true,\n        \"eyeTest\": \"NOT_REQUIRED\",\n        \"theoryLecture\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"theoryTestResult\": \"NOT_REQUIRED\",\n        \"drivingLessons\": {\n            \"required\": true,\n            \"lessonsRequired\": 8,\n            \"lessonsAttended\": 0\n        },\n        \"yardTestResult\": \"NOT_REQUIRED\",\n        \"roadTestResult\": \"NOT_REQUIRED\",\n        \"averageQuotationPrice\": 2,\n        \"needsVipTrainingCourse\": false,\n        \"nocType\": \"FULFILLED_MANUAL_REVIEWED\",\n        \"corporate\": {\n            \"tradeLicenseNo\": \"111\",\n            \"englishName\": \"Emirates Driving Institute - Port Rashid\",\n            \"arabicName\": \"معهد الإمارات للسياقة - ميناء راشد\"\n        },\n        \"rtaReviewStatus\": \"ACCEPTED\",\n        \"drivingSchoolReviewStatus\": \"ACCEPTED\",\n        \"clearnceAmount\": true\n    },\n    \"channelCode\": \"DLS_PORTAL\",\n    \"status\": \"DRAFT\",\n    \"statusDescription\": {\n        \"ar\": \"مسودة\",\n        \"en\": \"Draft\"\n    },\n    \"statusDate\": \"2019-06-30T11:31:35.448Z\",\n    \"activePhase\": \"CUSTOMER_ELIGIBILITY\",\n    \"customerId\": \"anonymous_user\",\n    \"englishCustomerName\": \"Anonymous User\",\n    \"arabicCustomerName\": \"مستخدم وهمي\",\n    \"userType\": \"ANONYMOUS\",\n    \"userTypeDescription\": {\n        \"ar\": \"غير متعارف عليه\",\n        \"en\": \"Anonymous\"\n    },\n    \"userRole\": \"ROLE_ANONYMOUS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8081/api/trn/applications/applicationTypeRefNo/1/userProfileRefNo/1232",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbm9ueW1vdXNfdXNlciIsImF1dGgiOiJST0xFX0FOT05ZTU9VUyIsImNoYW5uZWxDb2RlIjoiRExTX1BPUlRBTCIsInVzZXJUeXBlIjoiQU5PTllNT1VTIiwiZW5nbGlzaFVzZXJUeXBlRGVzYyI6IkFub255bW91cyIsImFyYWJpY1VzZXJUeXBlRGVzYyI6Iti62YrYsSDZhdiq2LnYp9ix2YEg2LnZhNmK2YciLCJ1c2VySWQiOjEsImVuZ2xpc2hDdXN0b21lck5hbWUiOiJBbm9ueW1vdXMgVXNlciIsImFyYWJpY0N1c3RvbWVyTmFtZSI6ItmF2LPYqtiu2K_ZhSDYutmK2LEg2YXYqti52KfYsdmBINi52YTZitmHIiwiZXhwIjoxNTcwNDMyMzcwfQ.t6M5yXbMYXgKbXLzR8e-IH2_VGC02PPEF7cTxH6xpzAUriQKlACE0BasESIltefjTQV-Nd7uanyO6nZbvk6R8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/trn/applications/applicationTypeRefNo/1/userProfileRefNo/1232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"trn",
+						"applications",
+						"applicationTypeRefNo",
+						"1",
+						"userProfileRefNo",
+						"1232"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

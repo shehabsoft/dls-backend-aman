@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "f1f36e71-cc00-40ed-90e1-f6ba7285c059",
+		"name": "Domain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Domains",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sys",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Domain By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/domains/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sys",
+						"domains",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Domain",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"TEST_DOMAIN\",\n    \"description\": {\n        \"ar\": \"تجربة\",\n        \"en\": \"Test Domain\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sys",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Domian",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "1557388363757",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 40,\n    \"code\": \"TEST_DOMAIN\",\n    \"description\": {\n        \"ar\": \"تجربة\",\n        \"en\": \"Test Domain\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sys",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Domain",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/sys/domains/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"sys",
+						"domains",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Domain By Code Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU1NzM5Mjk5OX0.RHYFWiRiuVbwQqHc_VGWp9XajqGu-U9CwBxT-KS3Bji_vhUUBOYDK34mQBdFp3kLEXIC_ZKGt68jhmqHX8AsiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/dlsbackend/api/public/sys/domains/code/APPL_STATUS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dlsbackend",
+						"api",
+						"public",
+						"sys",
+						"domains",
+						"code",
+						"APPL_STATUS"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

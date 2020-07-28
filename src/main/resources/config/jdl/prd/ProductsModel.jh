@@ -1,0 +1,141 @@
+
+/**
+ * LearningFile (prd_learning_file) entity.
+ * @author Mena Emiel.
+ */
+entity LearningFile (lefi) {
+	personaCategoryCode String required,
+    personaVersionCode String required,
+    serviceRequestId Long required,
+    applicationId Long required,
+    productDocument TextBlob required,
+    technicalRemarks String
+}
+
+/**
+ * LearningFileStatus enum.
+ * @author Mena Emiel.
+ */
+enum LearningFileStatus {
+    PENDING_FOR_EYE_TEST,
+    PENDING_FOR_MEDICAL_ASSESSMENT,
+    UNDER_PROCESSING,
+    COMPLETED,
+    CANCELLED
+}
+
+/**
+ * TestType enum.
+ * @author Mena Emiel.
+ */
+enum TestType {
+    THEORY,
+    YARD,
+    ROAD
+}
+
+/**
+ * TestStatus enum.
+ * @author Mena Emiel.
+ */
+enum TestStatus {
+    REQUIRED,
+    NOT_REQUIRED
+}
+
+/**
+ * TestResult enum.
+ * @author Mena Emiel.
+ */
+enum TestResult {
+    PASSED,
+    FAILED,
+    ABSENT,
+    PENDING
+}
+
+/**
+ * DrivingLicense (prd_driving_license) entity.
+ * @author Mena Emiel.
+ */
+entity DrivingLicense (drli) {
+    serviceRequestId Long required,
+    applicationId Long required,
+    productDocument TextBlob required,
+    technicalRemarks String,
+    synchedEntityId Long unique
+}
+
+/**
+ * LicenseStatus enum.
+ * @author Mena Emiel.
+ */
+enum LicenseStatus {
+    NEW,
+    REPLACEMENT
+}
+
+/**
+ * LicenseCategoryStatus enum.
+ * @author Mena Emiel.
+ */
+enum LicenseCategoryStatus {
+    EXPIRED
+}
+
+/**
+ * DrivingLicense (prd_medical_fitness) entity.
+ * @author Mena Emiel.
+ */
+entity MedicalFitness (mefi) {
+    serviceRequestId Long required,
+    applicationId Long required,
+    productDocument TextBlob required,
+    technicalRemarks String,
+    synchedEntityId Long unique
+}
+
+/**
+ * HandBook (prd_hand_book) entity.
+ * @author Mohammad Qasim.
+ */
+entity Handbook(prd_hand_book) {
+	serviceRequestId Long required,
+    applicationId Long required,
+    productDocument TextBlob required,
+    technicalRemarks String,
+    synchedEntityId Long unique
+}
+
+/**
+ * HandBookType enum.
+ */
+enum HandbookType {
+    HB_LMV,
+    HB_MC,
+    HB_HMV_BUS,
+    HB_LME,
+    HB_HME
+}
+
+/**
+ * BusinessProfile (prd_business_profile) entity.
+ * @author Yousef Abu Amireh / Rami Nassar.
+ */
+entity BusinessProfile(bupr) {
+    productDocument TextBlob required,
+    remarks String
+}
+
+// Set pagination options
+paginate LearningFile with pagination
+paginate DrivingLicense with pagination
+paginate MedicalFitness with pagination
+paginate Handbook with pagination
+paginate BusinessProfile with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options
+service all with serviceImpl

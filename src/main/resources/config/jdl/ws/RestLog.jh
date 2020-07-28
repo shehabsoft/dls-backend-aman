@@ -1,0 +1,20 @@
+/**
+ * Rest Log entity.
+ *
+ * @author Rami Nassar
+ */
+entity RestLog {
+    correlationId String,
+	httpMethod String required,
+	httpStatus Integer,
+	requestUrl String required,
+	requestBody TextBlob,
+	responseBody TextBlob
+}
+
+paginate RestLog with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

@@ -1,0 +1,26 @@
+{
+    "name": "DrivingLicenseView",
+    "fields": [
+        {
+            "fieldName": "emiratesId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190724112028",
+    "javadoc": "Driving License entity.\n@author Yousef.",
+    "entityTableName": "driving_license_view",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": false
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Domain.
+    -->
+    <changeSet id="20190219132937-constraint-1" author="Mena Emiel">
+        <sql dbms="oracle">
+            ALTER TABLE sys_domain ADD CONSTRAINT ck_doma_description CHECK (description IS JSON)
+        </sql>
+    </changeSet>
+    <changeSet id="20190219132937-constraint-2" author="Ahmad Abo AlShamat">
+
+        <sql dbms="oracle,h2">
+            ALTER TABLE  "SYS_DOMAIN" ADD CONSTRAINT CK_DOMA_CODE CHECK (UPPER(CODE) = CODE)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

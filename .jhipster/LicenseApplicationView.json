@@ -1,0 +1,30 @@
+{
+    "name": "LicenseApplicationView",
+    "fields": [
+        {
+            "fieldName": "emiratesId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vclId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191215153727",
+    "javadoc": "License Application entity.\\n@author Ahmad Abo AlShamat.",
+    "entityTableName": "license_application_view",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend"
+}

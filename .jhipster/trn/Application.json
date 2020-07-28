@@ -1,0 +1,148 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "ApplicationStatus",
+            "fieldValues": "NEW,UNDER_PROCESSING,COMPLETED,REJECTED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statusDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "statusDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "activePhase",
+            "fieldType": "PhaseType",
+            "fieldValues": "CUSTOMER_ELIGIBILITY,DRIVING_LEARNING_FILE_PROCESSING,DRIVING_LEARNING_FILE_AUDIT_PHASE,READY_FOR_CONTRACT_SIGN_PHASE,EYE_TEST_PHASE,THEORY_LECTURE_PHASE,KNOWLEDGE_TEST_PHASE,PRACTICAL_TRAINING_PHASE,YARD_TEST_PHASE,ADVANCED_PRACTICAL_TRAINING_PHASE,ROAD_TEST_PHASE,PRINT_LICENSE_PHASE,APPLICATION_REJECTION_PHASE,EXEMPTION_AUDITING_PHASE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "confirmedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "confirmationDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "rejectedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectionReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectionDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "processInstanceId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "channelCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "channelDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tradeLicenseNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userTypeDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userRole",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "applicationCriteria",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationPhase",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "applicationPhase"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceRequest",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "serviceRequest"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationViolation",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "applicationViolation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationType",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "applicationType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190515111115",
+    "javadoc": "Application (trn_application) entity.\n@author Mena Emiel.",
+    "entityTableName": "appl",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

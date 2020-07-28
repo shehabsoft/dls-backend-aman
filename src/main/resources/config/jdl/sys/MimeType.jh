@@ -1,0 +1,18 @@
+/**
+ * Mime Type entity.
+ * @author Mohammad Abu Lawi.
+ */
+entity MimeType (mity) {
+    extension String required unique,
+    contentType String required,
+    maximumSize Integer required
+}
+
+// Set pagination options
+paginate MimeType with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

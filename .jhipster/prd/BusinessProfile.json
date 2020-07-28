@@ -1,0 +1,30 @@
+{
+    "name": "BusinessProfile",
+    "fields": [
+        {
+            "fieldName": "productDocument",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190923110057",
+    "javadoc": "BusinessProfile (prd_business_profile) entity.\n@author Yousef Abu Amireh / Rami Nassar.",
+    "entityTableName": "prd_business_profile",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

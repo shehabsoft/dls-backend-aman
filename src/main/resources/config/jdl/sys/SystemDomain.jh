@@ -1,0 +1,41 @@
+
+/**
+ * The Domain entity.
+  * @author Mena Emiel.
+ */
+entity Domain {
+	code String unique required,
+    description String required
+}
+
+
+/**
+ * The DomainValue entity.
+  * @author Mena Emiel.
+ */
+entity DomainValue {
+	value Integer,
+	description String required,
+    sortOrder Integer required
+}
+
+
+// defining OneToMany relationships with comments
+relationship OneToMany {
+	/**
+	* A two sides relationship
+	*/
+	Domain{domainValue} to DomainValue{domain}
+}
+
+
+// Set pagination options
+paginate DomainValue with pagination
+paginate Domain with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options
+service all with serviceImpl
+

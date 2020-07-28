@@ -1,0 +1,39 @@
+{
+    "name": "Domain",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A two sides relationship",
+            "relationshipName": "domainValue",
+            "otherEntityName": "domainValue",
+            "otherEntityRelationshipName": "domain"
+        }
+    ],
+    "changelogDate": "20190219132937",
+    "javadoc": "The Domain entity.\n@author Mena Emiel.",
+    "entityTableName": "domain",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

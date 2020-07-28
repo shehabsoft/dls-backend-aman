@@ -1,0 +1,40 @@
+{
+    "name": "GlobalLicenseCategory",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "licenseCategory",
+            "otherEntityName": "licenseCategory",
+            "otherEntityRelationshipName": "globalLicenseCategory"
+        }
+    ],
+    "changelogDate": "20190407094239",
+    "javadoc": "The License Category Code entity.\n@author Tariq Abu Amireh",
+    "entityTableName": "license_category_code",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "DlsBackend",
+    "applications": "*",
+    "microserviceName": "DlsBackend",
+    "enableEntityAudit": true
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+<!--
+    Added the constraints for entity DomainValue.
+-->
+<changeSet id="20190219132938-constraint-1" author="Mena Emiel">
+
+    <addForeignKeyConstraint baseColumnNames="domain_id"
+                             baseTableName="sys_domain_value"
+                             constraintName="fk_dova_domain_id"
+                             referencedColumnNames="id"
+                             referencedTableName="sys_domain"/>
+    <sql dbms="oracle">
+        ALTER TABLE sys_domain_value ADD CONSTRAINT ck_dova_description CHECK (description IS JSON)
+    </sql>
+</changeSet>
+
+<changeSet id="20190219132938-constraint-2" author="Mena Emiel">
+
+    <addUniqueConstraint constraintName="ux_dova_value_domain_id" tableName="sys_domain_value" columnNames="value, domain_id" />
+    <addUniqueConstraint constraintName="ux_dova_sort_order_domain_id" tableName="sys_domain_value" columnNames="sort_order, domain_id" />
+
+</changeSet>
+
+<changeSet id="20190219132938-constraint-3" author="Mohammad Qasim">
+
+    <addNotNullConstraint tableName="sys_domain_value" columnName="value" columnDataType="varchar(255)"/>
+
+</changeSet>
+<changeSet id="20190219132938-constraint-4" author="Ahmad Abo AlShamat">
+
+    <createIndex tableName="sys_domain_value" indexName="I_DOVA_DOMAIN_ID" >
+        <column  name="DOMAIN_ID"></column>
+    </createIndex>
+
+    <createIndex tableName="sys_domain_value" indexName="UX_DOVA_DESC_AR_DOMAIN_ID" unique="true" >
+        <column  name="JSON_VALUE(DESCRIPTION, '$.ar' RETURNING VARCHAR2(255) ERROR ON ERROR),DOMAIN_ID"></column>
+    </createIndex>
+    <createIndex tableName="sys_domain_value" indexName="UX_DOVA_DESC_EN_DOMAIN_ID" unique="true" >
+        <column  name="JSON_VALUE(DESCRIPTION, '$.en' RETURNING VARCHAR2(255) ERROR ON ERROR),DOMAIN_ID"></column>
+    </createIndex>
+
+    <addNotNullConstraint tableName="sys_domain_value" columnName="SORT_ORDER" columnDataType="NUMBER(38,0)" />
+</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the Sequence for BrmRestLog.
+    -->
+    <changeSet id="20190423093125-seq-1" author="Rami Nassar">
+        <createSequence sequenceName="brrl_seq" startValue="1" incrementBy="1" cacheSize="0"/>
+    </changeSet>
+
+    <!--
+        Added the entity BrmRestLog.
+    -->
+    <changeSet id="20190423093125-1" author="Rami Nassar">
+        <createTable tableName="ws_brm_rest_log" remarks="BRM Rest Log entity. @author Rami Nassar">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="correlation_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="http_method" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="http_status" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="request_url" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="request_body" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="response_body" type="clob">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        
+    </changeSet>
+    
+    <!-- Added the entity audit columns -->
+    <changeSet id="20190423093125-audit-1" author="Rami Nassar">
+        <addColumn tableName="ws_brm_rest_log">
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
